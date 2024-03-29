@@ -44,7 +44,35 @@
         justify-content: space-between;
         margin-bottom: 3%;
     }
+
+    .card-border {
+      border-radius: 1rem;
+    }
+
+    .minimum-amount {
+      display: none;
+      width : 50%;
+    }
+
+    .minimum-items {
+      display: none;
+      width : 50%;
+    }
+
+    .limit-total {
+      display: none;
+      width : 50%;
+    }
     
+    .limit-one {
+      display: none;
+      width : 50%;
+    }
+
+    .limit-day {
+      display: none;
+      width : 50%;
+    }
 </style>
 
 </head>
@@ -353,7 +381,7 @@
 
     <div class="flex">
         <div class="pagetitle">
-            <h1>Voucher</h1>
+            <h1>Create Voucher</h1>
         </div>
         <div>
             <a href="promotions.html" class="btn btn-primary">Back </a>
@@ -361,204 +389,321 @@
     </div>
     
 
-    <section class="section profile">
-        <div class="row">
-          <form>
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-header"> <b>Amount Off Products </b></div>
-              <div class="card-body">
-                <h4 class="card-title">Method</h4>
-                <div class="btn-group" role="group" aria-label="Basic outlined example">
-                  <button type="button" class="btn btn-primary">Discount Code</button>
-                  <button type="button" class="btn btn-outline-primary">Automatic Discount</button>
+    <section class="section">
+      <div class="row">
+        <form>
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-header"> <b>Amount Off Products </b></div>
+            <div class="card-body">
+              <h4 class="card-title">Method</h4>
+              <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-primary">Discount Code</button>
+                <button type="button" class="btn btn-outline-primary">Automatic Discount</button>
+              </div>
+              <div class="mt-2">
+                <label class="col-form-label">Country</label>
+                <select class="form-select" aria-label="Select Countries">
+                  <option value="" selected disabled>Select Country</option>
+                  <option value="1">Singapore</option>
+                  <option value="2">Philippines</option>
+                  <option selected value="3">Malaysia</option>
+                </select>
+              </div>
+              <div class="mt-2">
+                <label for="voucher-title" class="col-form-label">Voucher Title</label>
+                <input type="text" class="form-control" value="Voucher-3">
+              </div>
+              <div class="mt-2">
+                <label for="voucher-id" class="col-form-label">Voucher Code</label>
+                <div class="">
+                  <input type="text" class="form-control" value="Ella-mas">
                 </div>
-                <div class="mt-2">
-                  <label class="col-form-label">Country</label>
-                  <select class="form-select" aria-label="Select Countries" >
-                      <!-- <option selected>Select Countries</option> -->
-                      <option value="1">Singapore</option>
-                      <option value="2">Philippines</option>
-                      <option selected value="3">Malaysia</option>
+                <p style="opacity: 0.7;"> Customer must enter this code at checkout.</p>
+              </div>
+              <div class="mt-2">
+                <label for="voucher-desc" class="col-form-label">Voucher Description</label>
+                <input type="text" class="form-control" value="50% off all drinks">
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Discount Value</h4>
+              <!-- <label for="voucher-id" class="col-form-label">Discount Value</label> -->
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <select id="discountValue" class="form-select" aria-label="Select Voucher Amount">
+                    <option value="Fixed Amount">Fixed Amount</option>
+                    <option selected value="Percentage Amount">Percentage </option>
                   </select>
                 </div>
-                <div class="mt-2">
-                  <label for="voucher-title" class="col-form-label">Voucher Title</label>
-                  <input type="text" class="form-control" value="Voucher-3">
+                <div class="col-md-6" id="fixedAmount">
+                  <input type="number" class="form-control" placeholder="RM 0.00">
                 </div>
-                <div class="mt-2">
-                  <label for="voucher-id" class="col-form-label">Voucher Code</label>
-                  <div class="">
-                    <input type="text" class="form-control" value="Ella-mas">
-                  </div>
-                  <p style="opacity: 0.7;"> Customer must enter this code at checkout.</p>
+                <div class="col-md-6" id="percentage" style="display: none;">
+                  <input type="number" class="form-control" placeholder="%" value="50">
                 </div>
               </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-body">
-                <h4 class="card-title">Discount Value</h4>
-                <!-- <label for="voucher-id" class="col-form-label">Discount Value</label> -->
-                <div class="row mb-3">
+              <h4 class="card-title">Applies To</h4>
+              <!-- <label for="voucher-id" class="col-form-label">Discount Value</label> -->
+              <div class="row mb-3">
+                <div class="col-md-12 mb-3">
+                  <select class="form-select" aria-label="Select Collection">
+                    <option value="Specific Colections">Specific collections</option>
+                    <option selected value="Collection 1">Collection 1 </option>
+                  </select>
+                </div>
+                <div class="col-md-12 ">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..">
+                    Only apply discount once per order
+                  <p style="opacity: 0.7;"> If not selected, the amount will be taken off each eligible item in an order.</p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Minimum Purchase Requirements</h4>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="purchaseRequirements" id="gridRadios1" value="option1" >
+                    <label class="form-check-label" for="gridRadios1">
+                      No minimum requirements
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="purchaseRequirements" id="minimumPurchase" value="option2" checked>
+                    <label class="form-check-label" for="minimumPurchase">
+                      Minimum purchase amount
+                    </label>
+                  </div>
+                  <div class="form-check minimum-amount mb-2" id="minimumAmount">
+                    <input class="form-control" type="number" placeholder="RM 0.00" value="RM20.00">
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="purchaseRequirements" id="minimumQuantity" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      Minimum quantity of items
+                    </label>
+                  </div>
+                  <div class="form-check minimum-items mb-2" id="minimumItems">
+                    <input class="form-control" type="number" placeholder="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Customer Eligiblity</h4>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios4" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios4">
+                      All Customers
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios5" value="option2">
+                    <label class="form-check-label" for="gridRadios5">
+                      Specific customer segments
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios6" value="option2">
+                    <label class="form-check-label" for="gridRadios6">
+                      Specific customers
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Maximum discount uses</h4>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="limit1" checked>
+                    <label class="form-check-label" for="limit1">
+                      Limit number of times this discount can be used in total
+                    </label>
+                  </div>
+                  <div class="form-check limit-total mb-2" id="limitTotal">
+                    <input class="form-control" type="number" placeholder="0" value="50">
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input " type="checkbox" id="gridCheck2" >
+                    <label class="form-check-label" for="gridCheck2">
+                      Limit to one use per customer
+                    </label>
+                  </div>
+                  <div class="form-check limit-one mb-2" id="limitOne">
+                    <input class="form-control" type="number" placeholder="0">
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="limitDay" >
+                    <label class="form-check-label" for="limitDay">
+                      Limit of uses per day
+                    </label>
+                  </div>
+                  <div class="form-check limit-day" id="limituse">
+                    <input class="form-control" type="number" placeholder="0">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Combinations</h4>
+              <p class="mb-3 mt-2"> This product discount can be combined with : </p>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="gridCheck3">
+                    <label class="form-check-label" for="gridCheck3">
+                      Product Discounts
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input " type="checkbox" id="gridCheck4" checked >
+                    <label class="form-check-label" for="gridCheck4">
+                      Order Discounts
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Date</h4>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="startDate" class="col-form-label"> Start Date</label>
+                  <input type="date" class="form-control" value="2024-03-30">
+                </div>
+                <div class="col-md-6">
+                  <label for="endDate" class="col-form-label">End Date</label>
+                  <input type="date" class="form-control" value="2024-05-30">
+                </div>
+              </div>
+              <h4 class="card-title">Day</h4>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="days" id="allDay" value="option1" >
+                    <label class="form-check-label" for="allDay">
+                      All Days
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="days" id="specificday" value="option2" checked>
+                    <label class="form-check-label" for="specificday">
+                      Specific Days
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-12" id="daysCheckbox" style="margin-left: 1rem; display: none;">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck5">
+                    <label class="form-check-label" for="gridCheck5">
+                      Monday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck6" >
+                    <label class="form-check-label" for="gridCheck6">
+                      Tuesday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck7" >
+                    <label class="form-check-label" for="gridCheck7">
+                      Wednesday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck8" >
+                    <label class="form-check-label" for="gridCheck8">
+                      Thursday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck9" >
+                    <label class="form-check-label" for="gridCheck9">
+                      Friday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck10" checked>
+                    <label class="form-check-label" for="gridCheck10" >
+                      Saturday
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input " type="checkbox" id="gridCheck11" checked>
+                    <label class="form-check-label" for="gridCheck11">
+                      Sunday
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <h4 class="card-title">Time</h4>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="time" id="anyTime" value="option1" >
+                    <label class="form-check-label" for="anyTime">
+                      Any Time
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="time" id="specifictime" value="option2" checked>
+                    <label class="form-check-label" for="specifictime">
+                      Specific Time
+                    </label>
+                  </div>
+                </div>
+                <div class="row" id="timeInput" style="display: none;">
                   <div class="col-md-6">
-                    <select class="form-select" aria-label="Select Voucher Amount">
-                      <option value="Fixed Amount">Fixed Amount</option>
-                      <option value="Percentage Amount">Percentage </option>
-                    </select>
+                    <label for="inputTime" class="col-sm-2 col-form-label">Start Time</label>
+                    <input type="time" class="form-control" value="08:00">
                   </div>
                   <div class="col-md-6">
-                    <input type="number" class="form-control" placeholder="RM 10.00">
-                  </div>
-                </div>
-                <h4 class="card-title">Applies To</h4>
-                <!-- <label for="voucher-id" class="col-form-label">Discount Value</label> -->
-                <div class="row mb-3">
-                  <div class="col-md-12 mb-3">
-                    <select class="form-select" aria-label="Select Collection">
-                      <option value="Specific Colections">Specific collections</option>
-                      <option selected value="Collection 1">Collection 1 </option>
-                    </select>
-                  </div>
-                  <div class="col-md-12 ">
-                    <input class="form-check-input me-1" type="checkbox" value="" aria-label=".." checked>
-                      Only apply discount once per order
-                    <p style="opacity: 0.7;"> If not selected, the amount will be taken off each eligible item in an order.</p>
+                    <label for="inputTime" class="col-sm-2 col-form-label">End Time</label>
+                    <input type="time" class="form-control" value="17:00">
                   </div>
                 </div>
               </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-body">
-                <h4 class="card-title">Minimum Purchase Requirements</h4>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="purchaseRequirements" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        No minimum requirements
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="purchaseRequirements" id="gridRadios2" value="option2" checked>
-                      <label class="form-check-label" for="gridRadios2">
-                        Minimum purchase amount
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="purchaseRequirements" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Minimum quantity of items
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-body">
-                <h4 class="card-title">Customer Eligiblity</h4>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        All Customers
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Specific customer segments
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="customerEligibility" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Specific customers
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-body">
-                <h4 class="card-title">Maximum discount uses</h4>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Limit number of times this discount can be used in total
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input " type="checkbox" id="gridCheck2" checked>
-                      <label class="form-check-label" for="gridCheck2">
-                        Limit to one use per customer
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-sm-2">
-              <div class="card-body">
-                <h4 class="card-title">Combinations</h4>
-                <p class="mb-3 mt-2"> This product discount can be combined with : </p>
-                <div class="row mb-3">
-                  <div class="col-md-12">
-                    <div class="form-check mb-2">
-                      <input class="form-check-input" type="checkbox" id="gridCheck1">
-                      <label class="form-check-label" for="gridCheck1">
-                        Product Discounts
-                      </label>
-                    </div>
-                    <div class="form-check mb-2">
-                      <input class="form-check-input " type="checkbox" id="gridCheck2" checked>
-                      <label class="form-check-label" for="gridCheck2">
-                        Order Discounts
-                      </label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <!-- Card with header and footer -->
-            <div class="col-8 card offset-2">
-              <div class="card-body">
-                <h4 class="card-title">Active Dates</h4>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label for="startDate" class="col-form-label"> Start Date</label>
-                    <input type="date" class="form-control" value="2024-03-26">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="endDate" class="col-form-label">End Date</label>
-                    <input type="date" class="form-control" value="2024-05-26">
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Card with header and footer -->
-  
-            <div class="col-12 d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary ">Save Voucher</button>
-           </div>
-  
-          </form>
-        </div>
-      </section>
+            </div>
+          </div><!-- End Card with header and footer -->
+
+          <div class="col-12 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary ">Save Voucher</button>
+         </div>
+
+        </form>
+
+      </div>
+    </section>
 
   </main><!-- End #main -->
 
@@ -591,6 +736,106 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
+    const specificdays = document.getElementById("specificday");
+    const allDays = document.getElementById("allDay");
+    const days = document.getElementById("daysCheckbox");
+
+    allDays.addEventListener("change", function() {
+    if (allDays.checked) {
+      daysCheckbox.style.display = 'none';
+    }
+  });
+
+    specificdays.addEventListener("change", function() {
+      if (specificdays.checked) {
+        days.style.display = 'block';
+      } else {
+        days.style.display = 'none';
+      }
+    });
+    
+    const specificTime = document.getElementById("specifictime");
+    const anyTime = document.getElementById("anyTime");
+    const time = document.getElementById("timeInput");
+
+    anyTime.addEventListener("change", function() {
+    if (anyTime.checked) {
+      time.style.display = 'none';
+    }
+  });
+
+    specificTime.addEventListener("change", function() {
+      if (specificTime.checked) {
+        time.style.display = 'flex';
+      } else {
+        time.style.display = 'none';
+      }
+    });
+
+
+    const fixedAmount = document.getElementById("fixedAmount");
+    const percentage = document.getElementById("percentage");
+    const discountValue = document.getElementById("discountValue");
+
+    discountValue.addEventListener("change", function() {
+    if (discountValue.value === "Fixed Amount") {
+      fixedAmount.style.display = 'flex';
+      percentage.style.display = 'none';
+    } else if (discountValue.value === "Percentage Amount") {
+      percentage.style.display = 'flex';
+      fixedAmount.style.display = 'none';
+    } else {
+      fixedAmount.style.display = 'none';
+      percentage.style.display = 'none';
+    }
+  });
+
+  const minimumAmount = document.getElementById("minimumAmount");
+  const minimumItems = document.getElementById("minimumItems");
+  const purchaseRequirements = document.querySelectorAll('input[name="purchaseRequirements"]');
+
+  purchaseRequirements.forEach(function(checkbox) {
+    checkbox.addEventListener("change", function() {
+      if (checkbox.id === "minimumPurchase" && checkbox.checked) {
+        minimumAmount.style.display = 'block';
+        minimumItems.style.display = 'none';
+      } else if (checkbox.id === "minimumQuantity" && checkbox.checked) {
+        minimumItems.style.display = 'flex';
+        minimumAmount.style.display = 'none';
+      } else {
+        minimumAmount.style.display = 'none';
+        minimumItems.style.display = 'none';
+      }
+    });
+  });
+
+  const limit1 = document.getElementById("limit1");
+  const limitTotal = document.getElementById("limitTotal");
+
+  limit1.addEventListener("change", function() {
+     if (limit1.checked) {
+        limitTotal.style.display = 'block';
+     }
+     else {
+      limitTotal.style.display = 'none';
+     }
+  })
+
+  const limitDay = document.getElementById("limitDay");
+  const limituse = document.getElementById("limituse");
+
+  limitDay.addEventListener("change", function() {
+     if (limitDay.checked) {
+      limituse.style.display = 'block';
+     }
+     else {
+      limituse.style.display = 'none';
+     }
+  })
+
+  </script>
+  
 </body>
 
 </html>
