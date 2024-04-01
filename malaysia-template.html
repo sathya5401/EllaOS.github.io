@@ -50,28 +50,28 @@
 }
 
 .menu-card {
-    position: relative;
+  position: relative;
 }
 
 .checkbox-btn
  {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
 }
 
 .switch-btn{
-    position: absolute;
-    top: 10px;
-    left: 15px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
     /* display: none; */
 }
 
 .switch-btn .form-check-input {
-    width: 50px; 
-    height: 25px; 
-    padding: 5px; 
+  width: 40px; 
+  height: 20px; 
+  padding: 5px; 
     /* font-size: 16px;  */
 }
 
@@ -92,9 +92,13 @@
     font-family: "Poppins", sans-seri
 }
 
-.menu-size {
+/* .menu-size {
   width: 46%;
-  /* margin-right: 5%; */
+  margin-right: 5%;
+} */
+
+.card-title {
+  padding: 5px 0 0px 0;
 }
 </style>
 
@@ -438,7 +442,7 @@
               </div>
               <div class="card-body">
                 <div class="row mt-2">
-                  <div class="col-6 card p-2 mr-2 menu-size menu-card" style="margin-right: 5%;">
+                  <div class="col-3 card p-2 mr-2 menu-size menu-card">
                     <div class="form-check form-switch switch-btn">
                       <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                       <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
@@ -454,7 +458,23 @@
                       </p> -->
                     </div>
                   </div>
-                  <div class="col-6 card p-2 menu-size menu-card">
+                  <div class="col-3 card p-2 menu-size menu-card">
+                    <div class="form-check form-switch switch-btn">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
+                    </div>
+                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Classic Cappuccino</h5>
+                      <p class="price">RM 8.00</p>
+                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
+                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
+                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
+                              a world of pure caffeinated bliss.
+                      </p> -->
+                    </div>
+                  </div>
+                  <div class="col-3 card p-2 menu-size menu-card">
                     <div class="form-check form-switch switch-btn">
                       <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                       <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
@@ -470,11 +490,27 @@
                       </p> -->
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-6 card p-2 mr-2 menu-size menu-card" style="margin-right: 5%;">
+                  <div class="col-3 card p-2 menu-size menu-card">
                     <div class="form-check form-switch switch-btn">
                       <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
+                    </div>
+                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Classic Cappuccino</h5>
+                      <p class="price">RM 8.00</p>
+                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
+                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
+                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
+                              a world of pure caffeinated bliss.
+                      </p> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3 card p-2 mr-2 menu-size menu-card">
+                    <div class="form-check form-switch switch-btn">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                       <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
                     </div>
                     <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
@@ -488,9 +524,41 @@
                       </p> -->
                     </div>
                   </div>
-                  <div class="col-6 card p-2 menu-size menu-card">
+                  <div class="col-3 card p-2 menu-size menu-card">
                     <div class="form-check form-switch switch-btn">
                       <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
+                    </div>
+                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Test 1</h5>
+                      <p class="price">RM 10.00</p>
+                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
+                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
+                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
+                              a world of pure caffeinated bliss.
+                      </p> -->
+                    </div>
+                  </div>
+                  <div class="col-3 card p-2 menu-size menu-card">
+                    <div class="form-check form-switch switch-btn">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
+                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
+                    </div>
+                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Test 1</h5>
+                      <p class="price">RM 10.00</p>
+                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
+                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
+                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
+                              a world of pure caffeinated bliss.
+                      </p> -->
+                    </div>
+                  </div>
+                  <div class="col-3 card p-2 menu-size menu-card">
+                    <div class="form-check form-switch switch-btn">
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
                       <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
                     </div>
                     <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">

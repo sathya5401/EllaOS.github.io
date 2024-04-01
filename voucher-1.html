@@ -737,102 +737,137 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    const specificdays = document.getElementById("specificday");
-    const allDays = document.getElementById("allDay");
-    const days = document.getElementById("daysCheckbox");
 
-    allDays.addEventListener("change", function() {
-    if (allDays.checked) {
-      daysCheckbox.style.display = 'none';
-    }
-  });
+    document.addEventListener("DOMContentLoaded", function(){
 
-    specificdays.addEventListener("change", function() {
-      if (specificdays.checked) {
-        days.style.display = 'block';
-      } else {
-        days.style.display = 'none';
+      //handle Days
+      const specificdays = document.getElementById("specificday");
+      const allDays = document.getElementById("allDay");
+      const days = document.getElementById("daysCheckbox");
+
+      function handleAllDays(){
+        if (allDays.checked) {
+        daysCheckbox.style.display = 'none';
+        }
       }
-    });
+      handleAllDays();
+      allDays.addEventListener("change", handleAllDays);
+
+      function handleSpecificDays() {
+        if (specificdays.checked) {
+          days.style.display = 'block';
+        } else {
+          days.style.display = 'none';
+        }
+      }
+      handleSpecificDays();
+      specificdays.addEventListener("change", handleSpecificDays);
+
+
+      //handle Time
+      const specificTime = document.getElementById("specifictime");
+      const anyTime = document.getElementById("anyTime");
+      const time = document.getElementById("timeInput");
+
+      function handleAnyTime(){
+        if (anyTime.checked) {
+          time.style.display = 'none';
+        }
+      }
+      handleAnyTime();
+      anyTime.addEventListener("change", handleAnyTime);
+
+      function handleSpecificTime(){
+        if (specificTime.checked) {
+          time.style.display = 'flex';
+        } else {
+          time.style.display = 'none';
+        }
+      }
+      handleSpecificTime();
+      specificTime.addEventListener("change", handleSpecificTime);
+
+
+
+      //discount Value
+      const fixedAmount = document.getElementById("fixedAmount");
+      const percentage = document.getElementById("percentage");
+      const discountValue = document.getElementById("discountValue");
+
+      function toggleFields() {
+      if (discountValue.value === "Fixed Amount") {
+        fixedAmount.style.display = 'flex';
+        percentage.style.display = 'none';
+      } else if (discountValue.value === "Percentage Amount") {
+        percentage.style.display = 'flex';
+        fixedAmount.style.display = 'none';
+      } else {
+        fixedAmount.style.display = 'none';
+        percentage.style.display = 'none';
+      }
+      }
+        
+      toggleFields();
+      // Event listener for change in discount value selection
+      discountValue.addEventListener("change", toggleFields);
+
+
+      //minimum purchase requirements
+      const minimumAmount = document.getElementById("minimumAmount");
+      const minimumItems = document.getElementById("minimumItems");
+      const purchaseRequirements = document.querySelectorAll('input[name="purchaseRequirements"]');
+
+      function handlePurchaseRequirementsChange() {
+        purchaseRequirements.forEach(function(checkbox) {
+          checkbox.addEventListener("change", function() {
+            if (checkbox.id === "minimumPurchase" && checkbox.checked) {
+              minimumAmount.style.display = 'block';
+              minimumItems.style.display = 'none';
+            } else if (checkbox.id === "minimumQuantity" && checkbox.checked) {
+              minimumItems.style.display = 'flex';
+              minimumAmount.style.display = 'none';
+            } else {
+              minimumAmount.style.display = 'none';
+              minimumItems.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      handlePurchaseRequirementsChange();
+
+
+
+      //maximum discount uses
+      const limit1 = document.getElementById("limit1");
+      const limitTotal = document.getElementById("limitTotal");
+
+      function handleLimitTotal(){
+        if (limit1.checked) {
+            limitTotal.style.display = 'block';
+        }
+        else {
+          limitTotal.style.display = 'none';
+        }
+      }
+      handleLimitTotal();
+      limit1.addEventListener("change", handleLimitTotal);
+
+      const limitDay = document.getElementById("limitDay");
+      const limituse = document.getElementById("limituse");
+
+      function handleLimitDay(){
+        if (limitDay.checked) {
+          limituse.style.display = 'block';
+        }
+        else {
+          limituse.style.display = 'none';
+        }
+      }
+      handleLimitDay();
+      limitDay.addEventListener("change", handleLimitDay);
+      })
     
-    const specificTime = document.getElementById("specifictime");
-    const anyTime = document.getElementById("anyTime");
-    const time = document.getElementById("timeInput");
-
-    anyTime.addEventListener("change", function() {
-    if (anyTime.checked) {
-      time.style.display = 'none';
-    }
-  });
-
-    specificTime.addEventListener("change", function() {
-      if (specificTime.checked) {
-        time.style.display = 'flex';
-      } else {
-        time.style.display = 'none';
-      }
-    });
-
-
-    const fixedAmount = document.getElementById("fixedAmount");
-    const percentage = document.getElementById("percentage");
-    const discountValue = document.getElementById("discountValue");
-
-    discountValue.addEventListener("change", function() {
-    if (discountValue.value === "Fixed Amount") {
-      fixedAmount.style.display = 'flex';
-      percentage.style.display = 'none';
-    } else if (discountValue.value === "Percentage Amount") {
-      percentage.style.display = 'flex';
-      fixedAmount.style.display = 'none';
-    } else {
-      fixedAmount.style.display = 'none';
-      percentage.style.display = 'none';
-    }
-  });
-
-  const minimumAmount = document.getElementById("minimumAmount");
-  const minimumItems = document.getElementById("minimumItems");
-  const purchaseRequirements = document.querySelectorAll('input[name="purchaseRequirements"]');
-
-  purchaseRequirements.forEach(function(checkbox) {
-    checkbox.addEventListener("change", function() {
-      if (checkbox.id === "minimumPurchase" && checkbox.checked) {
-        minimumAmount.style.display = 'block';
-        minimumItems.style.display = 'none';
-      } else if (checkbox.id === "minimumQuantity" && checkbox.checked) {
-        minimumItems.style.display = 'flex';
-        minimumAmount.style.display = 'none';
-      } else {
-        minimumAmount.style.display = 'none';
-        minimumItems.style.display = 'none';
-      }
-    });
-  });
-
-  const limit1 = document.getElementById("limit1");
-  const limitTotal = document.getElementById("limitTotal");
-
-  limit1.addEventListener("change", function() {
-     if (limit1.checked) {
-        limitTotal.style.display = 'block';
-     }
-     else {
-      limitTotal.style.display = 'none';
-     }
-  })
-
-  const limitDay = document.getElementById("limitDay");
-  const limituse = document.getElementById("limituse");
-
-  limitDay.addEventListener("change", function() {
-     if (limitDay.checked) {
-      limituse.style.display = 'block';
-     }
-     else {
-      limituse.style.display = 'none';
-     }
-  })
 
   </script>
   
