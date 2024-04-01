@@ -327,17 +327,25 @@
         </a>
         <ul id="marketing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="events.html">
-              <i class="bi bi-circle"></i><span>Events</span>
+            <a href="app.html">
+              <i class="bi bi-circle"></i><span>App</span>
             </a>
           </li>
           <li>
-            <a href="contents.html">
-              <i class="bi bi-circle"></i><span>Ads/Videos</span>
+            <a href="ella-content.html">
+              <i class="bi bi-circle"></i><span>Carts</span>
             </a>
           </li>
         </ul>
       </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="events.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Events</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="finance.html">
@@ -368,82 +376,19 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Ads/Videos </h1>
+      <h1>Ella Carts </h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item">Content</li>
-          <li class="breadcrumb-item active">Ella</li>
+          <li class="breadcrumb-item">Marketing</li>
+          <li class="breadcrumb-item active">Carts</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
-        <div class="row mb-3">
-            <div class="col-12">
-                <div class="btn-group btn-width" role="group" aria-label="Basic outlined example">
-                    <a href="contents.html" class="btn btn-outline-primary" id="ellaButton">Ella</a>
-                    <a href="app.html" class="btn btn-outline-primary" id="appButton">App</a>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-          <div class="card">
-              <div class="card-body">
-                  <div class="flex">
-                      <h5 class="col-md-3 card-title">Manage Ella Contents</h5>
-                      <div class="col-md-3 mt-2">
-                        <!-- <label for="inputState" class="form-label">Country</label> -->
-                        <select id="inputState" class="form-select">
-                            <!-- <option selected>Countries</option> -->
-                            <option value="">All</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Malaysia">Malaysia</option>
-                        </select>
-                      </div>
-                  </div>
-                <!-- Table with hoverable rows -->
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col"> Type </th>
-                      <th scope="col">Location</th>
-                      <th scope="col">Last Updated</th>
-                      <th scope="col"> Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" style="font-size: 1rem;"> Ella 1 </a>  </td>
-                      <td> XR </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="ella-content" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 2 </a>  </td>
-                      <td> X </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 3 </a>  </td>
-                      <td> XS </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- End Table with hoverable rows -->
-  
-              </div>
-            </div>
-        </div>
+
     </section>
 
   </main><!-- End #main -->
@@ -477,40 +422,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var page = window.location.pathname;
-        var ella = document.getElementById("ellaButton");
-        var app = document.getElementById("appButton");
-
-        function activeBtn() {
-            // Remove any existing 'active' class
-            document.querySelectorAll('.btn').forEach(function(btn) {
-                btn.classList.remove('active');
-            });
-
-            if (page.includes('contents.html')) {
-                ella.classList.add('active');
-            } else if (page.includes('app.html')) {
-                app.classList.add('active');
-            }
-        }
-
-        activeBtn();
-        ella.addEventListener("click", function(event) {
-            // event.preventDefault(); // Prevent default link behavior
-            activeBtn(); // Set the active button
-            // window.location.href = "contents.html"; // Manually redirect to contents.html
-        });
-        app.addEventListener("click", function(event) {
-            // event.preventDefault(); // Prevent default link behavior
-            activeBtn(); // Set the active button
-            // window.location.href = "app.html"; // Manually redirect to app-contents.html
-        });
-
-    });
-  </script>
 
 </body>
 

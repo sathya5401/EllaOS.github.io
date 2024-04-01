@@ -320,17 +320,25 @@
         </a>
         <ul id="marketing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="events.html">
-              <i class="bi bi-circle"></i><span>Events</span>
+            <a href="app.html">
+              <i class="bi bi-circle"></i><span>App</span>
             </a>
           </li>
           <li>
-            <a href="contents.html">
-              <i class="bi bi-circle"></i><span>Ads/Videos</span>
+            <a href="ella-content.html">
+              <i class="bi bi-circle"></i><span>Carts</span>
             </a>
           </li>
         </ul>
       </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="events.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Events</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="finance.html">
@@ -361,12 +369,12 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Manage Contents </h1>
+      <h1> Ella App</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
           <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item">Content</li>
+          <li class="breadcrumb-item">Marketing</li>
           <li class="breadcrumb-item active">App</li>
         </ol>
       </nav>
@@ -375,10 +383,7 @@
     <section class="section">
         <div class="row">
             <div class="col-12">
-                <div class="btn-group btn-width" role="group" aria-label="Basic outlined example">
-                    <a href="contents.html" class="btn btn-outline-primary" id="ellaButton">Ella</a>
-                    <a href="app.html" class="btn btn-outline-primary" id="appButton">App</a>
-                </div>
+
             </div>
         </div>
 
@@ -415,31 +420,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var page = window.location.pathname;
-        var ella = document.getElementById("ellaButton");
-        var app = document.getElementById("appButton");
-
-        function activeBtn() {
-            // Remove any existing 'active' class
-            document.querySelectorAll('.btn').forEach(function(btn) {
-                btn.classList.remove('active');
-            });
-
-            if (page.includes('contents.html')) {
-                ella.classList.add('active');
-            } else if (page.includes('app.html')) {
-                app.classList.add('active');
-            }
-        }
-
-        activeBtn();
-        
-
-    });
-  </script>
 
 </body>
 
