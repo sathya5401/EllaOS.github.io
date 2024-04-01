@@ -36,71 +36,15 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
 
 <style>
-  .description {
-  max-height: 100px; /* Set a maximum height for the description */
-  overflow: hidden; /* Hide the overflow */
-}
 
-.read-more {
-  display: block;
-  margin-top: 10px; /* Adjust spacing as needed */
-}
-
-.menu-card {
-    position: relative;
-}
-
-.checkbox-btn
- {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: none;
-}
-
-.switch-btn{
-    position: absolute;
-    top: 10px;
-    left: 15px;
-    /* display: none; */
-}
-
-.switch-btn .form-check-input {
-    width: 40px; 
-    height: 20px; 
-    padding: 5px; 
-    /* font-size: 16px;  */
-}
-
-.switch-btn .form-check-input:checked {
-  background-color: #00f532;
-}
-
-.menu-card:hover .checkbox-btn 
-{
-    display: inline-block;
-}
-
-.price {
-    /* padding: 20px 0 15px 0; */
-    font-size: 14px;
-    font-weight: 300;
-    color: #012970;
-    font-family: "Poppins", sans-seri
-}
-
-/* .menu-size {
-  width: 46%;
-  margin-right: 5%;
-} */
-
-.card-title {
-  padding: 5px 0 0px 0;
+.btn-width{
+  width: 20%;
 }
 </style>
+
+</head>
 
 <body>
 
@@ -252,7 +196,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="/assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -416,190 +360,32 @@
 
   <main id="main" class="main">
 
-    <section class="section">
+    <div class="pagetitle">
+      <h1>Manage Contents </h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">Pages</li>
+          <li class="breadcrumb-item">Content</li>
+          <li class="breadcrumb-item active">App</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
 
-        <div class="row mb-3">
-          <div class="col-6 pagetitle">
-            <h1>Create Template</h1>
-          </div><!-- End Page Title -->
-          <div class="col-6 d-flex justify-content-end">
-            <a href="templates.html" class="btn btn-primary"> Back</a>
-          </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="btn-group btn-width" role="group" aria-label="Basic outlined example">
+                    <a href="contents.html" class="btn btn-outline-primary" id="ellaButton">Ella</a>
+                    <a href="app.html" class="btn btn-outline-primary" id="appButton">App</a>
+                </div>
+            </div>
         </div>
-        
-        <form>
-          <div class="row">
-            <div class="col-8 card offset-sm-2 card-border">
-              <div class="card-header"> 
-                <b> Details of Menu Template </b>
-              </div>
-              <div class="card-body">
-                <div class="row mt-2">
-                  <div class="col-6">
-                    <label class="col-form-label">Country</label>
-                    <select class="form-select" aria-label="Select Countries">
-                      <option value="" selected disabled>Select Country</option>
-                      <option value="1">Singapore</option>
-                      <option  value="2">Philippines</option>
-                      <option  value="3">Malaysia</option>
-                    </select>
-                  </div>
-                  <div class="col-6">
-                    <label for="template-name" class="col-form-label">Template Name</label>
-                      <input type="text" class="form-control">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-8 card offset-sm-2 card-border">
-              <div class="card-header"> 
-                <b> Select Menu</b>
-              </div>
-              <div class="card-body">
-                <div class="row mt-2">
-                  <div class="col-3 card p-2 mr-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Americano</h5>
-                      <p class="price">RM 7.00</p>
-                      <!-- <p class="card-text description"> 
-                              Experience the irresistible allure of our Americano and let its boldness awaken your senses.
-                              Savor the robust aroma, relish in the invigorating flavor, and allow the rich coffee notes to linger on your palate.
-                              Embrace the uncompromising strength and simplicity of this classic coffee beverage that stands the test of time.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Classic Cappuccino</h5>
-                      <p class="price">RM 8.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Classic Cappuccino</h5>
-                      <p class="price">RM 8.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Classic Cappuccino</h5>
-                      <p class="price">RM 8.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-3 card p-2 mr-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Test 2</h5>
-                      <p class="price">RM 7.00</p>
-                      <!-- <p class="card-text description"> 
-                              Experience the irresistible allure of our Americano and let its boldness awaken your senses.
-                              Savor the robust aroma, relish in the invigorating flavor, and allow the rich coffee notes to linger on your palate.
-                              Embrace the uncompromising strength and simplicity of this classic coffee beverage that stands the test of time.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Test 1</h5>
-                      <p class="price">RM 10.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Test 1</h5>
-                      <p class="price">RM 10.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                  <div class="col-3 card p-2 menu-size menu-card">
-                    <div class="form-check form-switch switch-btn">
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" >
-                      <!-- <label class="form-check-label" for="flexSwitchCheckChecked"></label> -->
-                    </div>
-                    <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Test 1</h5>
-                      <p class="price">RM 10.00</p>
-                      <!-- <p class="card-text description">Immerse yourself in the elegance of our Classic Cappuccino and let its creamy richness 
-                              envelop your senses. Delight in the exquisite balance of flavors and the artistry of its presentation, as you savor 
-                              each sip. Experience the essence of Italian coffee culture and allow our Classic Cappuccino to transport you to
-                              a world of pure caffeinated bliss.
-                      </p> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-            <div class="row">
-                <div class="col-12 d-flex justify-content-end">
-                    <a href="templates.html" class="btn btn-outline-primary ">Save</a>
-                </div>
-            </div>
-        </form>
+
     </section>
 
   </main><!-- End #main -->
-  
+
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
@@ -629,7 +415,31 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var page = window.location.pathname;
+        var ella = document.getElementById("ellaButton");
+        var app = document.getElementById("appButton");
+
+        function activeBtn() {
+            // Remove any existing 'active' class
+            document.querySelectorAll('.btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+
+            if (page.includes('contents.html')) {
+                ella.classList.add('active');
+            } else if (page.includes('app.html')) {
+                app.classList.add('active');
+            }
+        }
+
+        activeBtn();
+        
+
+    });
+  </script>
 
 </body>
 
