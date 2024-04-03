@@ -49,6 +49,7 @@
   justify-content: space-between;
   margin-bottom: 2%;
 }
+
 </style>
 
 </head>
@@ -391,56 +392,59 @@
         <div class="row mt-4">
           <div class="card">
               <div class="card-body">
-                  <div class="flex">
-                      <h5 class="col-md-3 card-title">Manage Ella Contents</h5>
-                      <div class="col-md-3 mt-2">
-                        <!-- <label for="inputState" class="form-label">Country</label> -->
-                        <select id="inputState" class="form-select">
-                            <!-- <option selected>Countries</option> -->
-                            <option value="">All</option>
-                            <option value="Singapore">Singapore</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Malaysia">Malaysia</option>
-                        </select>
-                      </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5 class="card-title">Manage Ella Contents</h5>
                   </div>
-                <!-- Table with hoverable rows -->
-                <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col"> Type </th>
-                      <th scope="col">Location</th>
-                      <th scope="col">Last Updated</th>
-                      <th scope="col"> Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" style="font-size: 1rem;"> Ella 1 </a>  </td>
-                      <td> XR </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="cart-1.html" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 2 </a>  </td>
-                      <td> X </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                    <tr>
-                      <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 3 </a>  </td>
-                      <td> XS </td>
-                      <td> Sunway Putra Mall </td>
-                      <td> 2024-03-30 </td>
-                      <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- End Table with hoverable rows -->
-  
+                  <div class="col-md-6 d-flex justify-content-end align-items-start mt-2">
+                    <!-- <label for="inputState" class="form-label">Country</label> -->
+                    <select id="inputState" class="form-select" style="width: 50%;">
+                        <!-- <option selected>Countries</option> -->
+                        <option value="">All</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Malaysia">Malaysia</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- Table with hoverable rows -->
+                  <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col"> Type </th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Last Updated</th>
+                        <th scope="col"> Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td> <a class="badge border-info border-1 text-info" style="font-size: 1rem;"> Ella 1 </a>  </td>
+                        <td> XR </td>
+                        <td> Sunway Putra Mall </td>
+                        <td> 2024-03-30 </td>
+                        <td> <a href="cart-1.html" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
+                      </tr>
+                      <tr>
+                        <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 2 </a>  </td>
+                        <td> X </td>
+                        <td> Sunway Putra Mall </td>
+                        <td> 2024-03-30 </td>
+                        <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
+                      </tr>
+                      <tr>
+                        <td> <a class="badge border-info border-1 text-info" href="" style="font-size: 1rem;"> Ella 3 </a>  </td>
+                        <td> XS </td>
+                        <td> Sunway Putra Mall </td>
+                        <td> 2024-03-30 </td>
+                        <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-pen"></i></a> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- End Table with hoverable rows -->
+                </div>
               </div>
             </div>
         </div>

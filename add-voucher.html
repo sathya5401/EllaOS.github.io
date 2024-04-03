@@ -445,6 +445,15 @@
                 <label for="voucher-desc" class="col-form-label">Voucher Description</label>
                 <input type="text" class="form-control">
               </div>
+              <div class="mt-2">
+                <label for="menu-img" class="col-form-label">Voucher Image (URL)</label>
+                <input type="text" id="menu-img-url" class="form-control">
+                <button  class="mt-2 btn btn-outline-secondary" type="button" id="preview-button" name="preview">Preview</button>
+              </div>
+              <!-- Add an img tag to display the image -->
+              <div class="mt-2" id="image-preview-container">
+                <img id="image-preview" src="#" alt="Image Preview" style="max-width: 100%; max-height: 200px; display: none;">
+              </div>                
             </div>
           </div><!-- End Card with header and footer -->
 
@@ -887,6 +896,29 @@
       handleLimitDay();
       limitDay.addEventListener("change", handleLimitDay);
       })
+
+      const menuImgInput = document.getElementById("menu-img-url");
+      const imagePreview = document.getElementById("image-preview");
+      const previewButton = document.getElementById("preview-button");
+
+        // Function to update the image preview
+        function updateImagePreview() {
+            const imageUrl = menuImgInput.value;
+            if (imageUrl.trim() !== "") {
+                // Show the image preview
+                imagePreview.style.display = "block";
+                imagePreview.src = imageUrl;
+            } else {
+                // Hide the image preview if no URL is provided
+                imagePreview.style.display = "none";
+            }
+        }
+
+        // Add click event listener to the Preview button
+        previewButton.addEventListener("click", function() {
+          event.preventDefault(); 
+          updateImagePreview();
+        });
     
 
   </script>

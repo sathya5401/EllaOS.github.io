@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+<style>
+
+.img-row {
+    display: none;
+}
+
+.video-row {
+    display: none;
+}
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">EllaOS</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="ella-management.html">
+          <i class="bi bi-person"></i>
+          <span>Manage Fleets </span>
+        </a>
+      </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="promotions.html">
+          <i class="bi bi-question-circle"></i>
+          <span> Promotions</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Kitchen</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="templates.html">
+              <i class="bi bi-circle"></i><span>Templates</span>
+            </a>
+          </li>
+          <li>
+            <a href="menus.html">
+              <i class="bi bi-circle"></i><span>Menus</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#marketing-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Marketing</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="marketing-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="app.html">
+              <i class="bi bi-circle"></i><span>App</span>
+            </a>
+          </li>
+          <li>
+            <a href="ella-content.html">
+              <i class="bi bi-circle"></i><span>Carts</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="events.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Events</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="finance.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Finances/Performance</span>
+        </a>
+      </li><!-- End Login Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-error-404.html">
+          <i class="bi bi-dash-circle"></i>
+          <span>Manage request </span>
+        </a>
+      </li><!-- End Error 404 Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="pages-blank.html">
+          <i class="bi bi-file-earmark"></i>
+          <span>User Management</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+
+  <main id="main" class="main">
+
+    <div class="row mb-4">
+      <div class="col-12 d-flex justify-content-end align-items-start">
+        <a href="cart-1.html" class="btn btn-primary">Back </a>
+      </div>
+    </div>
+
+    <section class="section">
+        <form>
+            <div class="row" id="card-container">
+                <div class="card card-border col-md-8 offset-md-2" >
+                    <div class="card-header">
+                        Front-TV Content 1
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <label class="col-form-label">Content Type</label>
+                                <select id="contentType" class="form-select" aria-label="Select Countries">
+                                    <option value="" selected disabled>Select</option>                                    
+                                    <option value="video">Video</option>
+                                    <option selected value="img">Image</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row img-row" id="imgRow">
+                            <div class="col-6">
+                                <label for="cart-img" class="col-form-label">Image URL</label>
+                                <input type="text" id="img-url" class="form-control" value="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp">
+                                <button  class="mt-2 btn btn-outline-secondary" type="button" id="img-preview-button" name="preview">Preview</button>
+                            </div>
+                            <div class="col-6">
+                                <label for="cart-desc" class="col-form-label">Description</label>
+                                <input type="text" class="form-control" value="Front TV image">
+                            </div>
+                        </div>
+                        <div class="row video-row" id="vidRow">
+                            <div class="col-6">
+                                <label for="cart-video" class="col-form-label">Video URL</label>
+                                <input type="text" id="vid-url" class="form-control" value="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4">
+                                <button  class="mt-2 btn btn-outline-secondary" type="button" id="vid-preview-button" name="preview">Preview</button>
+                            </div>
+                            <div class="col-6">
+                                <label for="cart-desc" class="col-form-label">Description</label>
+                                <input type="text" class="form-control" value="Front TV video">
+                            </div>
+                        </div>
+                        <div class="mt-2" id="image-preview-container">
+                            <img id="image-preview" src="" alt="Image Preview" style="max-width: 100%; max-height: 200px; display: none;">
+                        </div> 
+                        <div class="mt-2" id="video-preview-container" style="display: none;">
+                          <video width="640" height="360" controls>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                          </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 offset-md-2">
+                <button  class="mt-2 btn btn-outline-primary" type="button" id="add-content" name="add">Add Content</button>
+              </div>
+            </div>
+        </form>
+
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+  <script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    // Get a reference to the card container and the add content button
+    const cardContainer = document.querySelector('#card-container');
+    const addContentButton = document.querySelector('#add-content');
+
+    // Add an event listener to the add content button
+    addContentButton.addEventListener('click', function() {
+        // Create a new card element
+        const card = document.createElement('div');
+        card.classList.add('card', 'card-border', 'col-md-8', 'offset-md-2');
+
+        // Create a new card header element
+        const cardHeader = document.createElement('div');
+        cardHeader.classList.add('card-header');
+        cardHeader.textContent = 'Front-TV Content ' + (cardContainer.children.length + 1);
+        card.appendChild(cardHeader);
+
+        // Create a new card body element
+        const cardBody = document.createElement('div');
+        cardBody.classList.add('card-body');
+        card.appendChild(cardBody);
+
+        // Create a new row for the content type selection
+        const contentTypeRow = document.createElement('div');
+        contentTypeRow.classList.add('row');
+        cardBody.appendChild(contentTypeRow);
+
+        // Create a new column for the content type selection
+        const contentTypeCol = document.createElement('div');
+        contentTypeCol.classList.add('col-6');
+        contentTypeRow.appendChild(contentTypeCol);
+
+        // Create a label for the content type selection
+        const contentTypeLabel = document.createElement('label');
+        contentTypeLabel.classList.add('col-form-label');
+        contentTypeLabel.textContent = 'Content Type';
+        contentTypeCol.appendChild(contentTypeLabel);
+
+        // Create a select element for the content type selection
+        const contentTypeSelect = document.createElement('select');
+        contentTypeSelect.classList.add('form-select');
+        contentTypeSelect.setAttribute('id', 'contentType');
+        contentTypeSelect.setAttribute('aria-label', 'Select Countries');
+        contentTypeCol.appendChild(contentTypeSelect);
+
+        // Create option elements for the content type selection
+        const option1 = document.createElement('option');
+        option1.setAttribute('value', '');
+        option1.setAttribute('disabled', 'true');
+        option1.setAttribute('selected', 'true');
+        option1.textContent = 'Select';
+        contentTypeSelect.appendChild(option1);
+
+        const option2 = document.createElement('option');
+        option2.setAttribute('value', 'video');
+        option2.textContent = 'Video';
+        contentTypeSelect.appendChild(option2);
+
+        const option3 = document.createElement('option');
+        option3.setAttribute('value', 'img');
+        option3.textContent = 'Image';
+        contentTypeSelect.appendChild(option3);
+
+        // Create a new row for the image input fields
+        const imgRow = document.createElement('div');
+        imgRow.classList.add('row', 'img-row');
+        imgRow.setAttribute('id', 'imgRow');
+        // imgRow.style.display = 'none';
+        cardBody.appendChild(imgRow);
+
+        // Create a new column for the image URL input field
+        const imgCol = document.createElement('div');
+        imgCol.classList.add('col-6');
+        imgRow.appendChild(imgCol);
+
+        // Create a label for the image URL input field
+        const imgUrlLabel = document.createElement('label');
+        imgUrlLabel.setAttribute('for', 'cart-img');
+        imgUrlLabel.classList.add('col-form-label');
+        imgUrlLabel.textContent = 'Image URL';
+        imgCol.appendChild(imgUrlLabel);
+
+        // Create an input element for the image URL
+        const imgUrlInput = document.createElement('input');
+        imgUrlInput.setAttribute('type', 'text');
+        imgUrlInput.setAttribute('id', 'img-url');
+        imgUrlInput.classList.add('form-control');
+        // imgUrlInput.setAttribute('value', '');
+        imgCol.appendChild(imgUrlInput);
+
+        // Create a button for previewing the image
+        const imgPreviewButton = document.createElement('button');
+        imgPreviewButton.setAttribute('type', 'button');
+        imgPreviewButton.setAttribute('id', 'img-preview-button');
+        imgPreviewButton.setAttribute('name', 'preview');
+        imgPreviewButton.classList.add('mt-2', 'btn', 'btn-outline-secondary');
+        imgPreviewButton.textContent = 'Preview';
+        imgCol.appendChild(imgPreviewButton);
+
+        // Create a new column for the image description input field
+        const imgDescCol = document.createElement('div');
+        imgDescCol.classList.add('col-6');
+        imgRow.appendChild(imgDescCol);
+
+        // Create a label for the image description input field
+        const imgDescLabel = document.createElement('label');
+        imgDescLabel.setAttribute('for', 'cart-desc');
+        imgDescLabel.classList.add('col-form-label');
+        imgDescLabel.textContent = 'Description';
+        imgDescCol.appendChild(imgDescLabel);
+
+        // Create an input element for the image description
+        const imgDescInput = document.createElement('input');
+        imgDescInput.setAttribute('type', 'text');
+        imgDescInput.classList.add('form-control');
+        // imgDescInput.setAttribute('value', 'Front TV image');
+        imgDescCol.appendChild(imgDescInput);
+
+        // Create a new row for the video input fields
+        const vidRow = document.createElement('div');
+        vidRow.classList.add('row', 'video-row');
+        vidRow.setAttribute('id', 'vidRow');
+        vidRow.style.display = 'none';
+        cardBody.appendChild(vidRow);
+
+        // Create a new column for the video URL input field
+        const vidCol = document.createElement('div');
+        vidCol.classList.add('col-6');
+        vidRow.appendChild(vidCol);
+
+        // Create a label for the video URL input field
+        const vidUrlLabel = document.createElement('label');
+        vidUrlLabel.setAttribute('for', 'cart-video');
+        vidUrlLabel.classList.add('col-form-label');
+        vidUrlLabel.textContent = 'Video URL';
+        vidCol.appendChild(vidUrlLabel);
+
+        // Create an input element for the video URL
+        const vidUrlInput = document.createElement('input');
+        vidUrlInput.setAttribute('type', 'text');
+        vidUrlInput.setAttribute('id', 'vid-url');
+        vidUrlInput.classList.add('form-control');
+        // vidUrlInput.setAttribute('value', '');
+        vidCol.appendChild(vidUrlInput);
+
+        // Create a button for previewing the video
+        const vidPreviewButton = document.createElement('button');
+        vidPreviewButton.setAttribute('type', 'button');
+        vidPreviewButton.setAttribute('id', 'vid-preview-button');
+        vidPreviewButton.setAttribute('name', 'preview');
+        vidPreviewButton.classList.add('mt-2', 'btn', 'btn-outline-secondary');
+        vidPreviewButton.textContent = 'Preview';
+        vidCol.appendChild(vidPreviewButton);
+
+        // Create a new column for the video description input field
+        const vidDescCol = document.createElement('div');
+        vidDescCol.classList.add('col-6');
+        vidRow.appendChild(vidDescCol);
+
+        // Create a label for the video description input field
+        const vidDescLabel = document.createElement('label');
+        vidDescLabel.setAttribute('for', 'cart-desc');
+        vidDescLabel.classList.add('col-form-label');
+        vidDescLabel.textContent = 'Description';
+        vidDescCol.appendChild(vidDescLabel);
+
+        // Create an input element for the video description
+        const vidDescInput = document.createElement('input');
+        vidDescInput.setAttribute('type', 'text');
+        vidDescInput.classList.add('form-control');
+        // vidDescInput.setAttribute('value', 'Front TV video');
+        vidDescCol.appendChild(vidDescInput);
+
+        // Create a new row for the image preview container
+        const imgPreviewContainerRow = document.createElement('div');
+        imgPreviewContainerRow.classList.add('row');
+        cardBody.appendChild(imgPreviewContainerRow);
+
+        // Create a new column for the image preview container
+        const imgPreviewContainerCol = document.createElement('div');
+        imgPreviewContainerCol.classList.add('col-12', 'mt-2');
+        imgPreviewContainerCol.setAttribute('id', 'image-preview-container');
+        imgPreviewContainerRow.appendChild(imgPreviewContainerCol);
+
+        // Create an image element for the image preview
+        const imagePreview = document.createElement('img');
+        imagePreview.setAttribute('id', 'image-preview');
+        imagePreview.setAttribute('src', '');
+        imagePreview.setAttribute('alt', 'Image Preview');
+        imagePreview.style.maxWidth = '100%';
+        imagePreview.style.maxHeight = '200px';
+        imagePreview.style.display = 'none';
+        imgPreviewContainerCol.appendChild(imagePreview);
+
+        // Create a new row for the video preview container
+        const vidPreviewContainerRow = document.createElement('div');
+        vidPreviewContainerRow.classList.add('row');
+        cardBody.appendChild(vidPreviewContainerRow);
+
+        // Create a new column for the video preview container
+        const vidPreviewContainerCol = document.createElement('div');
+        vidPreviewContainerCol.classList.add('col-12', 'mt-2');
+        vidPreviewContainerCol.setAttribute('id', 'video-preview-container');
+        vidPreviewContainerCol.style.display = "none";
+        vidPreviewContainerRow.appendChild(vidPreviewContainerCol);
+
+        // Create a video element for the video preview
+        const videoPreview = document.createElement('video');
+        videoPreview.setAttribute('width', '640');
+        videoPreview.setAttribute('height', '360');
+        videoPreview.setAttribute('controls', 'true');
+        vidPreviewContainerCol.appendChild(videoPreview);
+
+        // Create a source element for the video preview
+        const videoSource = document.createElement('source');
+        videoSource.setAttribute('src', '');
+        videoSource.setAttribute('type', 'video/mp4');
+        videoPreview.appendChild(videoSource);
+
+        // Create a text node for the video not supported message
+        const videoNotSupported = document.createTextNode('Your browser does not support the video tag.');
+        videoPreview.appendChild(videoNotSupported);
+
+        // Append the newly created card to the card container
+        cardContainer.appendChild(card);
+
+        // Add event listeners to the elements in the card
+        addEventListenersToCard(card);
+    });
+
+    // Function to add event listeners to the elements in a card
+    function addEventListenersToCard(card) {
+        // Get references to the elements in the card
+        const contentType = card.querySelector("#contentType");
+        const imgRow = card.querySelector("#imgRow");
+        const vidRow = card.querySelector("#vidRow");
+        const imgPreviewContainer = card.querySelector("#image-preview-container");
+        const vidPreviewContainer = card.querySelector("#video-preview-container");
+        const menuImgInput = card.querySelector("#img-url");
+        const menuVidInput = card.querySelector("#vid-url");
+        const imgpreviewButton = card.querySelector("#img-preview-button");
+        const vidpreviewButton = card.querySelector("#vid-preview-button");
+        const imagePreview = card.querySelector("#image-preview");
+
+        // Function to handle content type change
+        function handleContentType() {
+            if (contentType.value === "video") {
+                vidRow.style.display = "flex";
+                imgRow.style.display = 'none';
+                // Hide the image preview
+                imagePreview.style.display = "none";
+            } else if (contentType.value === "img") {
+                vidRow.style.display = "none";
+                imgRow.style.display = 'flex';
+                // Hide the video preview
+                vidPreviewContainer.style.display = "none";
+            } else {
+                vidRow.style.display = "none";
+                imgRow.style.display = 'none';
+                // Hide both image and video preview
+                imagePreview.style.display = "none";
+                vidPreviewContainer.style.display = "none";
+            }
+        }
+
+        // Function to update the image preview
+        function updateImagePreview() {
+            const imageUrl = menuImgInput.value;
+            if (imageUrl.trim() !== "") {
+                // Show the image preview
+                imagePreview.style.display = "block";
+                imagePreview.src = imageUrl;
+            } else {
+                // Hide the image preview if no URL is provided
+                imagePreview.style.display = "none";
+            }
+        }
+
+        // Function to update the video preview
+        function updateVideoPreview() {
+            const vidUrl = menuVidInput.value;
+            if (vidUrl.trim() !== "") {
+                // Show the video preview
+                vidPreviewContainer.style.display = "block";
+                const videoPlayer = vidPreviewContainer.querySelector("video");
+                videoPlayer.src = vidUrl;
+                videoPlayer.load(); // Load the new video source
+            } else {
+                // Hide the video preview if no URL is provided
+                vidPreviewContainer.style.display = "none";
+            }
+        }
+
+        // Add event listener to content type select
+        contentType.addEventListener("change", handleContentType);
+
+        // Add click event listener to the Preview button for image
+        imgpreviewButton.addEventListener("click", function() {
+            event.preventDefault();
+            updateImagePreview();
+        });
+
+        // Add click event listener to the Preview button for video
+        vidpreviewButton.addEventListener("click", function() {
+            event.preventDefault();
+            updateVideoPreview();
+        });
+    }
+
+
+
+    //handle content type
+    var contentType = document.getElementById("contentType");
+    var vidRow = document.getElementById("vidRow");
+    var imgRow = document.getElementById("imgRow");
+
+    //preview img/video
+    const menuImgInput = document.getElementById("img-url");
+    const menuVidInput = document.getElementById("vid-url");
+    const imagePreview = document.getElementById("image-preview");
+    const vidPreviewContainer = document.getElementById("video-preview-container");
+    const imgpreviewButton = document.getElementById("img-preview-button");
+    const vidpreviewButton = document.getElementById("vid-preview-button");
+
+
+    function handleContentType(){
+      if (contentType.value === "video") {
+        vidRow.style.display = "flex";
+        imgRow.style.display = 'none';
+        // Hide the image preview
+        imagePreview.style.display = "none";
+    }
+    else if (contentType.value === "img") {
+        vidRow.style.display = "none";
+        imgRow.style.display = 'flex';
+        // Hide the image preview
+        vidPreviewContainer.style.display = "none";        
+    }
+    else {
+        vidRow.style.display = "none";
+        imgRow.style.display = 'none';
+        // Hide both image and video preview
+        imagePreview.style.display = "none";
+        vidPreviewContainer.style.display = "none";
+    }
+    }
+
+    handleContentType();
+    contentType.addEventListener("change", handleContentType);
+
+    // Function to update the image preview
+    function updateImagePreview() {
+        const imageUrl = menuImgInput.value;
+        if (imageUrl.trim() !== "") {
+            // Show the image preview
+            imagePreview.style.display = "block";
+            imagePreview.src = imageUrl;
+        } else {
+            // Hide the image preview if no URL is provided
+            imagePreview.style.display = "none";
+        }
+    }
+
+    function updateVideoPreview(){
+        const vidUrl = menuVidInput.value;
+        if (vidUrl.trim() !== "") {
+            // Show the video preview
+            vidPreviewContainer.style.display = "block";
+            const videoPlayer = vidPreviewContainer.querySelector("video");
+            videoPlayer.src = vidUrl;
+            videoPlayer.load(); // Load the new video source
+        } else {
+            // Hide the video preview if no URL is provided
+            vidPreviewContainer.style.display = "none";
+        }
+    }
+
+    // Add click event listener to the Preview button for image
+    imgpreviewButton.addEventListener("click", function() {
+        event.preventDefault(); 
+        updateImagePreview();
+    });
+
+    // Add click event listener to the Preview button for video
+    vidpreviewButton.addEventListener("click", function() {
+        event.preventDefault(); 
+        updateVideoPreview();
+    });
+
+
+  });
+
+  </script>
+
+</body>
+
+</html>
