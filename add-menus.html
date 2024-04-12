@@ -389,21 +389,44 @@
                         <b>New Menu</b>
                     </div>
                     <div class="card-body">
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label for="menu-name" class="col-form-label">Menu SKU</label>
+                              <input type="text" class="form-control">
+                            </div>
+                          </div>
                           <div class="row mt-2">
                             <div class="col-md-6">
                               <label class="col-form-label">Categories</label>
                               <select class="form-select" aria-label="Select Menu Category">
                                   <option value="" selected disabled>Select Menu Category</option>                                    
                                   <option value="1">Coffee</option>
-                                  <option value="2">Tea</option>
-                                  <option value="3">Others</option>
+                                  <option value="2">Non-Coffee</option>
+                                  <option value="3">Food</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <label for="menu-name" class="col-form-label">Name</label>
                               <input type="text" class="form-control">
+                            </div>
                           </div>
-                        </div>
+                          <div class="row mt-2">
+                            <legend class="col-form-label">Status</legend>
+                            <div class="col-md-12">
+                              <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" >
+                                <label class="form-check-label" for="statusActive">
+                                  Active
+                                </label>
+                              </div>
+                              <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="voucherStatus" id="statusInactive" value="inactive">
+                                <label class="form-check-label" for="statusInactive">
+                                  Inactive
+                                </label>
+                              </div>
+                            </div> 
+                          </div>
                         <div class="mt-2">
                           <label for="menu-img" class="col-form-label">Image URL</label>
                           <input type="text" id="menu-img-url" class="form-control">
@@ -417,7 +440,8 @@
                             <label for="menu-desc" class="col-form-label">Description</label>
                             <textarea style="height: 150px" type="text" class="form-control"></textarea>
                         </div>
-                        <div class="mt-2">
+                        <div class="row mt-2">
+                          <div class="col-md-6">
                             <label class="col-form-label">Country</label>
                             <select class="form-select" aria-label="Select Countries">
                                 <option value="" selected disabled>Select Country</option>                                    
@@ -425,14 +449,19 @@
                                 <option value="2">Philippines</option>
                                 <option value="3">Malaysia</option>
                             </select>
-                        </div>
-                        <div class="row mt-2">
-                          <div class="col-6">
+                          </div>
+                          <div class="col-md-6">
                             <label for="menu-currency" class="col-form-label">Currency</label>
                             <input type="text" class="form-control" placeholder="RM">
                           </div>
+                        </div>
+                        <div class="row mt-2">
                           <div class="col-6">
-                            <label for="menu-price" class="col-form-label">Price</label>
+                            <label for="menu-price" class="col-form-label">App Price</label>
+                            <input type="number" class="form-control" placeholder="0.00">
+                          </div>
+                          <div class="col-6">
+                            <label for="menu-price" class="col-form-label">Kiosk Price</label>
                             <input type="number" class="form-control" placeholder="0.00">
                           </div>
                         </div>

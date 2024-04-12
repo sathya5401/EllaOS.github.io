@@ -73,6 +73,14 @@
       display: none;
       width : 50%;
     }
+
+    .card-title {
+      padding: 10px 0 0px 0;
+    }
+
+    .restaurant-checkbox {
+      padding-left: 6%;
+    }
 </style>
 
 </head>
@@ -414,21 +422,55 @@
         <form>
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
-            <div class="card-header"> <b>Amount Off Products </b></div>
+            <div class="card-header"> <b> Products Discount </b></div>
             <div class="card-body">
-              <h4 class="card-title">Method</h4>
-              <div class="btn-group" role="group" aria-label="Basic outlined example">
-                <button type="button" class="btn btn-primary">Discount Code</button>
-                <button type="button" class="btn btn-outline-primary">Automatic Discount</button>
-              </div>
-              <div class="mt-2">
-                <label class="col-form-label">Country</label>
-                <select class="form-select" aria-label="Select Countries">
-                  <option value="" selected disabled>Select Country</option>
-                  <option value="1">Singapore</option>
-                  <option value="2">Philippines</option>
-                  <option value="3">Malaysia</option>
-                </select>
+              <h4 class="card-title">Voucher</h4>
+              <!-- <div class="btn-group mt-2" role="group" id="btn-group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary active" id="vouchercode">Voucher Code</button>
+                <button type="button" class="btn btn-outline-primary" id="promocode">Promo Code</button>
+              </div> -->
+              <div class="row">
+                <div class="col-md-12 form-check mb-2 restaurant-checkbox" id="show-box">
+                  <input class="form-check-input" name="show" type="checkbox" id="promocode" checked>
+                  <label class="form-check-label" for="promocode">
+                    Show on App
+                  </label>
+                </div>
+                <legend class="col-form-label">Status</legend>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" >
+                      <label class="form-check-label" for="statusActive">
+                        Active
+                      </label>
+                    </div>
+                    <div class="form-check mb-2">
+                      <input class="form-check-input" type="radio" name="voucherStatus" id="statusInactive" value="inactive">
+                      <label class="form-check-label" for="statusInactive">
+                        Inactive
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="col-form-label">Voucher Item Type</label>
+                  <select class="form-select" aria-label="Select Type">
+                    <option value="" selected disabled>Select Type</option>
+                    <option value="ella">ELLA</option>
+                    <option value="food">FOOD</option>
+                    <option value="combo">COMBO</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="col-form-label">Country</label>
+                  <select class="form-select" aria-label="Select Countries">
+                    <option value="" selected disabled>Select Country</option>
+                    <option value="1">Singapore</option>
+                    <option value="2">Philippines</option>
+                    <option value="3">Malaysia</option>
+                  </select>
+                </div>
               </div>
               <div class="mt-2">
                 <label for="voucher-title" class="col-form-label">Voucher Title</label>
@@ -446,6 +488,10 @@
                 <input type="text" class="form-control">
               </div>
               <div class="mt-2">
+                <label for="voucher-terms" class="col-form-label">Terms & Condition</label>
+                <textarea style="height: 150px" type="text" class="form-control"></textarea>
+              </div>
+              <div class="mt-2" id="voucher-img">
                 <label for="menu-img" class="col-form-label">Voucher Image (URL)</label>
                 <input type="text" id="menu-img-url" class="form-control">
                 <button  class="mt-2 btn btn-outline-secondary" type="button" id="preview-button" name="preview">Preview</button>
@@ -480,19 +526,189 @@
               <!-- <label for="voucher-id" class="col-form-label">Discount Value</label> -->
               <div class="row mb-3">
                 <div class="col-md-12 mb-3">
-                  <select class="form-select" aria-label="Select Collection">
-                    <option value="Specific Colections">Specific collections</option>
-                    <option value="Collection 1">Collection 1 </option>
+                  <label class="col-form-label"> Voucher Type</label>
+                  <select id="voucher-type" class="form-select" aria-label="Select Type">
+                    <option value="" selected disabled>Select Type</option>
+                    <option value="1">PUBLIC Restaurant </option>
+                    <option value="2">CORPORATE Restaurant</option>
+                    <option value="3">ALL Restaurant</option>
                   </select>
                 </div>
-                <div class="col-md-12 ">
+                <div class="row mb-3" id="restaurant-row" style="display: none;">
+                  <label class="col-form-label"> Restaurants List</label>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="restaurant" type="checkbox" id="restaurant1">
+                    <label class="form-check-label" for="restaurant1">
+                      Restaurant 1
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="restaurant" type="checkbox" id="restaurant2" >
+                    <label class="form-check-label" for="restaurant2">
+                      Restaurant 2
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="restaurant" type="checkbox" id="restaurant3">
+                    <label class="form-check-label" for="restaurant3">
+                      Restaurant 3
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="restaurant" type="checkbox" id="restaurant4" >
+                    <label class="form-check-label" for="restaurant4">
+                      Restaurant 4
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="restaurant" type="checkbox" id="restaurant5">
+                    <label class="form-check-label" for="restaurant5">
+                      Restaurant 5
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="restaurant" type="checkbox" id="all" >
+                    <label class="form-check-label" for="all">
+                      ALL
+                    </label>
+                  </div>
+                </div>
+                <div class="row mb-3" id="corporate-row" style="display: none;">
+                  <label class="col-form-label"> Corporates List</label>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="corporate" type="checkbox" id="corporate1">
+                    <label class="form-check-label" for="corporate1">
+                      Corporate 1
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="corporate" type="checkbox" id="corporate2" >
+                    <label class="form-check-label" for="corporate2">
+                      Corporate 2
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="corporate" type="checkbox" id="corporate3">
+                    <label class="form-check-label" for="corporate3">
+                      Corporate 3
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="corporate" type="checkbox" id="corporate4" >
+                    <label class="form-check-label" for="corporate4">
+                      Corporate 4
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="corporate" type="checkbox" id="corporate5">
+                    <label class="form-check-label" for="corporate5">
+                      Corporate 5
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="corporate" type="checkbox" id="allcorporate" >
+                    <label class="form-check-label" for="all">
+                      ALL
+                    </label>
+                  </div>
+                </div>
+                <!-- <div class="col-md-12 ">
                   <input class="form-check-input me-1" type="checkbox" value="" aria-label="..">
                     Only apply discount once per order
                   <p style="opacity: 0.7;"> If not selected, the amount will be taken off each eligible item in an order.</p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div><!-- End Card with header and footer -->
+
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <h4 class="card-title">Products</h4>
+              <p style="opacity: 0.7; display: none;"> Please Select Voucher Item Type</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="col-form-label">Categories</label>
+                  <select class="form-select" aria-label="Select Category" id="categories">
+                      <option value="" selected disabled>Select Menu Category</option>                                    
+                      <option value="1">Coffee</option>
+                      <option value="2">Non-Coffee</option>
+                      <option value="3">Food</option>
+                      <option value="4"> All </option>
+                  </select>
+                </div>       
+              </div>
+              <div class="row" id="coffee-row" style="display: none;">
+                <label class="col-form-label"> Coffee Menu</label>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input" name="product" type="checkbox" id="cappuccino">
+                  <label class="form-check-label" for="cappuccino">
+                    Clasic Cappuccino
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input " name="product" type="checkbox" id="americano" >
+                  <label class="form-check-label" for="americano">
+                    Americano
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input" name="product" type="checkbox" id="flatwhite">
+                  <label class="form-check-label" for="flatwhite">
+                    Flat White
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input " name="product" type="checkbox" id="latte" >
+                  <label class="form-check-label" for="latte">
+                    Latte
+                  </label>
+                </div>
+              </div>
+              <div class="row" id="noncoffee-row" style="display: none;">
+                <label class="col-form-label"> Non-Coffee Menu</label>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input" name="product" type="checkbox" id="tealatte">
+                  <label class="form-check-label" for="tealatte">
+                    Tea Latte
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input " name="product" type="checkbox" id="chocolate" >
+                  <label class="form-check-label" for="chocolate">
+                    Classic Chocolate
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input" name="product" type="checkbox" id="pandantea">
+                  <label class="form-check-label" for="pandantea">
+                    Pandan Tea Latte
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input " name="product" type="checkbox" id="vanillamilk" >
+                  <label class="form-check-label" for="vanillamilk">
+                    Vanilla Milk
+                  </label>
+                </div>
+              </div>
+              <div class="row" id="food-row" style="display: none;">
+                <label class="col-form-label"> Food Menu</label>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input" name="product" type="checkbox" id="food1">
+                  <label class="form-check-label" for="food1">
+                    Food 1
+                  </label>
+                </div>
+                <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                  <input class="form-check-input " name="product" type="checkbox" id="food2" >
+                  <label class="form-check-label" for="food2">
+                    Food 2
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
@@ -527,10 +743,11 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card with header and footer -->
+          </div>
+          <!-- End Card with header and footer -->
 
           <!-- Card with header and footer -->
-          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+          <!-- <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
             <div class="card-body">
               <h4 class="card-title">Customer Eligiblity</h4>
               <div class="row mb-3">
@@ -556,7 +773,8 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card with header and footer -->
+          </div> -->
+          <!-- End Card with header and footer -->
 
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
@@ -573,19 +791,19 @@
                   <div class="form-check limit-total mb-2" id="limitTotal">
                     <input class="form-control" type="number" placeholder="0">
                   </div>
-                  <div class="form-check mb-2">
+                  <!-- <div class="form-check mb-2">
                     <input class="form-check-input " type="checkbox" id="gridCheck2" >
                     <label class="form-check-label" for="gridCheck2">
                       Limit to one use per customer
                     </label>
-                  </div>
+                  </div> -->
                   <div class="form-check limit-one mb-2" id="limitOne">
                     <input class="form-control" type="number" placeholder="0">
                   </div>
                   <div class="form-check mb-2">
                     <input class="form-check-input" type="checkbox" id="limitDay" >
                     <label class="form-check-label" for="limitDay">
-                      Limit of uses per day
+                      Limit of uses per day by a customer
                     </label>
                   </div>
                   <div class="form-check limit-day" id="limituse">
@@ -597,7 +815,49 @@
           </div><!-- End Card with header and footer -->
 
           <!-- Card with header and footer -->
-          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+          <!-- <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-body">
+              <div class="row" id="voucher-visible">
+                <h4 class="card-title" style="margin-left: 2%">Visibility</h4>
+                <p> Make this voucher public : </p>
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="voucherVisibility" id="visibleYes" value="yes" >
+                    <label class="form-check-label" for="visibleYes">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="voucherVisibility" id="visibleNo" value="no">
+                    <label class="form-check-label" for="visibleNo">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <h4 class="card-title">Status</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" >
+                    <label class="form-check-label" for="statusActive">
+                      Active
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="voucherStatus" id="statusInactive" value="inactive">
+                    <label class="form-check-label" for="statusInactive">
+                      Inactive
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- End Card with header and footer -->
+
+          <!-- Card with header and footer -->
+          <!-- <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
             <div class="card-body">
               <h4 class="card-title">Combinations</h4>
               <p class="mb-3 mt-2"> This product discount can be combined with : </p>
@@ -618,7 +878,8 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card with header and footer -->
+          </div> -->
+          <!-- End Card with header and footer -->
 
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
@@ -723,7 +984,8 @@
                 </div>
               </div>
             </div>
-          </div><!-- End Card with header and footer -->
+          </div>
+          <!-- End Card with header and footer -->
 
           <div class="col-12 d-flex justify-content-end">
             <button type="submit" class="btn btn-primary ">Save Voucher</button>
@@ -895,7 +1157,6 @@
       }
       handleLimitDay();
       limitDay.addEventListener("change", handleLimitDay);
-      })
 
       const menuImgInput = document.getElementById("menu-img-url");
       const imagePreview = document.getElementById("image-preview");
@@ -919,6 +1180,139 @@
           event.preventDefault(); 
           updateImagePreview();
         });
+
+
+        //handle VOUCHER type 
+        var restaurant = document.getElementById("restaurant-row");
+        var corporate = document.getElementById("corporate-row");
+        var voucherType = document.getElementById("voucher-type");
+
+        function handleVoucherType() {
+
+          if (voucherType.value === "1") {
+            restaurant.style.display = "flex"
+            corporate.style.display = "none"
+          } 
+          else if ( voucherType.value === "2") {
+            restaurant.style.display = "none"
+            corporate.style.display = "flex"
+          }
+          else if (voucherType.value === "3"){
+            restaurant.style.display = "flex"
+            corporate.style.display = "flex"
+          }
+          else {
+            restaurant.style.display = "none"
+            corporate.style.display = "none"
+          }
+        }
+
+        handleVoucherType();
+
+        voucherType.addEventListener("change", handleVoucherType);
+        
+
+        // handle restaurants checkbox
+        const checkboxes = document.querySelectorAll('input[name="restaurant"]');
+        const allCheckbox = document.getElementById('all');
+
+        function handleRestaurantChange() {
+          // If "ALL" checkbox is checked, check all other checkboxes
+          checkboxes.forEach(checkbox => {
+              checkbox.checked = this.checked;
+            });
+          }
+        
+          allCheckbox.addEventListener('change', handleRestaurantChange);
+
+
+          //handle CORPORATE checkbox
+          var corporatecheckboxes = document.querySelectorAll('input[name="corporate"]');
+          var allcorporate = document.getElementById('allcorporate');
+
+          function handleCorporateChange(){
+            // If "ALL" checkbox is checked, check all other checkboxes
+            corporatecheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+              });
+          }
+
+          allcorporate.addEventListener('change', handleCorporateChange);
+
+
+          //handle Promo Code & Voucher Code
+          var promoCode = document.getElementById("promocode")
+          var voucherCode = document.getElementById("vouchercode")
+          var show = document.getElementById("show-box")
+          var voucherImg = document.getElementById("voucher-img")
+          var voucherVis = document.getElementById("voucher-visible")
+
+          function handlePromoCode(){
+            if (promoCode.checked) {
+              // voucherCode.classList.remove("active");
+              // promoCode.classList.add("active");
+              voucherImg.style.display = "block"
+              voucherVis.style.display = "block"
+            }
+            else if (!promoCode.checked){
+              voucherImg.style.display = "none"
+              voucherVis.style.display = "none"
+            }
+
+          }
+
+          // function handleVoucherCode(){
+          //   voucherCode.classList.add("active");
+          //   promoCode.classList.remove("active");
+          //   voucherImg.style.display = "block"
+          //   voucherVis.style.display = "block"
+          // }
+
+          promoCode.addEventListener("click", handlePromoCode)
+          // voucherCode.addEventListener("click", handleVoucherCode)
+
+
+
+          // handle CATEGORIES - PRODUCTS
+          var coffeeRow = document.getElementById("coffee-row")
+          var nonCoffeeRow = document.getElementById("noncoffee-row")
+          var foodRow = document.getElementById("food-row")
+          var categories = document.getElementById("categories")
+
+
+          function handleCategories() {
+            if (categories.value === "1"){
+              coffeeRow.style.display = "flex"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "none"
+            }
+            else if (categories.value === "2") {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "flex"
+              foodRow.style.display = "none"
+            }
+            else if (categories.value === "3") {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "flex"
+            }
+            else if (categories.value === "4") {
+              coffeeRow.style.display = "flex"
+              nonCoffeeRow.style.display = "flex"
+              foodRow.style.display = "flex"
+            }
+            else {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "none"
+            }     
+          }
+
+          categories.addEventListener("change", handleCategories)
+
+    })
+
+
     
 
   </script>
