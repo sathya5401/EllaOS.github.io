@@ -56,6 +56,14 @@
   min-width: 50%;
 }
 
+.bulk-table {
+  display: none;
+}
+
+/* .individual-table {
+  display: block;
+} */
+
 </style>
 </head>
 
@@ -473,19 +481,29 @@
             <div class="card-body">
                 <div class="flex">
                     <h5 class="col-md-3 card-title">Manage Vouchers</h5>
-                    <div class="col-md-3 mt-2">
-                      <!-- <label for="inputState" class="form-label">Country</label> -->
-                      <select id="inputState" class="form-select">
-                          <!-- <option selected>Countries</option> -->
-                          <option value="">All</option>
-                          <option value="Singapore">Singapore</option>
-                          <option value="Philippines">Philippines</option>
-                          <option value="Malaysia">Malaysia</option>
-                      </select>
+                    <div class="row mt-2">
+                      <div class="col-md-7">
+                        <!-- <label for="inputState" class="form-label">Country</label> -->
+                        <select id="voucherType" class="form-select">
+                            <!-- <option selected>Countries</option> -->
+                            <option selected value="individual">Individual Vouchers</option>
+                            <option value="bulk">Bulk Voucher Set</option>
+                        </select>
+                      </div>
+                      <div class="col-md-5">
+                        <!-- <label for="inputState" class="form-label">Country</label> -->
+                        <select id="inputState" class="form-select">
+                            <!-- <option selected>Countries</option> -->
+                            <option value="">All</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Malaysia">Malaysia</option>
+                        </select>
+                      </div>
                     </div>
                 </div>
               <!-- Table with hoverable rows -->
-              <table class="table table-hover">
+              <table id="individualTable" class="table table-hover individual-table">
                 <thead>
                   <tr>
                     <th scope="col">Voucher Code</th>
@@ -540,6 +558,48 @@
               </table>
               <!-- End Table with hoverable rows -->
 
+              <table id="bulkTable" class="table table-hover bulk-table" >
+                <thead>
+                  <tr>
+                    <th scope="col">Voucher Set</th>
+                    <th scope="col"> Number of Codes </th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> Status </th>
+                    <th scope="col"> Start Date </th>
+                    <th scope="col"> End Date </th>
+                    <th scope="col"> Voucher Usage </th>
+                    <th scope="col"> Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <!-- <th scope="row"></th> -->
+                    <td> <a class="badge border-info border-1 text-info" href="voucher-1.html" style="font-size: 1rem;"> Black Friday Vouchers </a></td>
+                    <td>50</td>
+                    <td> Singapore</td>
+                    <td> Products Discount</td>
+                    <td> <span class="span-active"> Active </span> </td>
+                    <td> 2024-03-26 </td>
+                    <td> 2024-05-30</td>
+                    <td> 23 </td>
+                    <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-trash"></i></a> </td>
+                  </tr>
+                  <tr>
+                    <!-- <th scope="row">2</th> -->
+                    <td> <a class="badge border-info border-1 text-info" href="voucher-1.html" style="font-size: 1rem;"> Women's Day Vouchers </a> </td>
+                    <td>100</td>
+                    <td> Singapore</td>
+                    <td>Products Discount</td>
+                    <td> <span class="span-active"> Active </span> </td>
+                    <td> 2024-03-26 </td>
+                    <td> 2024-04-26</td>
+                    <td> 18 </td>
+                    <td> <a href="#" class="btn btn-danger btn-sm" title="Remove Voucher"><i class="bi bi-trash"></i></a> </td>
+                  </tr>
+                </tbody>
+              </table>
+
             </div>
           </div>
       </div>
@@ -575,6 +635,32 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function(){
+    
+      var voucherType = document.getElementById("voucherType");
+      var bulkTable = document.getElementById("bulkTable");
+      var individual = document.getElementById("individualTable")
+
+      function handleVoucherTable(){
+        if (voucherType.value === "individual") {
+          individual.style.display = "table";
+          bulkTable.style.display = "none";
+        }
+        else if (voucherType.value === "bulk" ){
+          individual.style.display = "none";
+          bulkTable.style.display = "table";
+        }
+      }
+
+      voucherType.addEventListener("change", handleVoucherTable);
+
+    })
+
+
+  </script>
 
 </body>
 

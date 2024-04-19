@@ -450,16 +450,10 @@
 
     <div class="flex">
         <div class="pagetitle">
-            <h1>Create Voucher</h1>
+            <h1>Create Voucher Set</h1>
         </div>
-        <div>
-          <div class="dropdown">
-            <button class="dropdown-toggle btn btn-outline-primary" id="buttons-dropdown">More Actions</button>
-            <div class="dropdown-menu" id="dropdownMenu">
-              <a href="add-bulk-voucher.html" class="btn btn-sm btn-light"> Create Voucher Set   <i class="bi bi-ticket-perforated"></i></a>
-            </div>
-          </div>          
-          <a href="promotions.html" class="btn btn-primary">Back </a>
+        <div>        
+          <a href="add-voucher.html" class="btn btn-primary">Back </a>
         </div>
     </div>
     
@@ -469,9 +463,9 @@
         <form>
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
-            <div class="card-header"> <b> Products Discount </b></div>
+            <div class="card-header"> <b> Bulk Products Discount </b></div>
             <div class="card-body">
-              <h4 class="card-title">Voucher</h4>
+              <h4 class="card-title">Generate Bulk Vouchers</h4>
               <!-- <div class="btn-group mt-2" role="group" id="btn-group" aria-label="Basic outlined example">
                 <button type="button" class="btn btn-outline-primary active" id="vouchercode">Voucher Code</button>
                 <button type="button" class="btn btn-outline-primary" id="promocode">Promo Code</button>
@@ -510,26 +504,55 @@
                   </select>
                 </div>
                 <div class="col-md-6">
-                  <label class="col-form-label">Country</label>
-                  <select class="form-select" aria-label="Select Countries">
-                    <option value="" selected disabled>Select Country</option>
-                    <option value="1">Singapore</option>
-                    <option value="2">Philippines</option>
-                    <option value="3">Malaysia</option>
-                  </select>
+                    <label class="col-form-label">Country</label>
+                    <select class="form-select" aria-label="Select Countries">
+                        <option value="" selected disabled>Select Country</option>
+                        <option value="1">Singapore</option>
+                        <option value="2">Philippines</option>
+                        <option value="3">Malaysia</option>
+                    </select>
                 </div>
               </div>
               <div class="mt-2">
-                <label for="voucher-title" class="col-form-label">Voucher Title</label>
+                <label for="voucher-set-title" class="col-form-label">Voucher Set Title</label>
                 <input type="text" class="form-control">
               </div>
-              <div class="mt-2">
+              <div class="row">
+                <div class="col-md-4">
+                    <label for="number-codes" class="col-form-label">Number of Codes</label>
+                    <input class="form-control" type="number" placeholder="0">
+                </div>
+                <div class="col-md-4">
+                    <label for="codes-length" class="col-form-label">Code Length</label>
+                    <input class="form-control" type="number" placeholder="0">
+                </div>
+                <div class="col-md-4">
+                    <label class="col-form-label">Allowed Characters</label>
+                    <select class="form-select" aria-label="Select Allowed Characters">
+                        <option value="" selected disabled>Select Condition</option>
+                        <option value="1">Letters and Numbers</option>
+                        <option value="2">Letters Only</option>
+                        <option value="3">Numbers Only</option>
+                    </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <label for="voucher-prefix" class="col-form-label">Prefix(Optional)</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="voucher-suffix" class="col-form-label">Suffix(Optional)</label>
+                    <input type="text" class="form-control">
+                </div>
+              </div>
+              <!-- <div class="mt-2">
                 <label for="voucher-id" class="col-form-label">Voucher Code</label>
                 <div class="">
                   <input type="text" class="form-control">
                 </div>
                 <p style="opacity: 0.7;"> Customer must enter this code at checkout.</p>
-              </div>
+              </div> -->
               <div class="mt-2">
                 <label for="voucher-desc" class="col-form-label">Voucher Description</label>
                 <input type="text" class="form-control">
