@@ -81,47 +81,6 @@
     .restaurant-checkbox {
       padding-left: 6%;
     }
-
-    .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  /* Style the dropdown toggle button */
-  .dropdown-toggle {
-    /* background-color: #3498db; */
-    /* color: #fff; */
-    /* border: none; */
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-
-  /* Style the dropdown menu */
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    /* background-color: #f9f9f9;
-    min-width: 160px;
-    z-index: 1; */
-    padding-left: 5%;
-    width : 115%;
-  }
-
-  /* Style the dropdown menu items */
-  .dropdown-menu button {
-    display: block;
-    padding: 10px 20px;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  /* Style the dropdown menu items on hover */
-  /* .dropdown-menu button:hover {
-    background-color: #ddd;
-  } */
 </style>
 
 </head>
@@ -455,10 +414,10 @@
 
     <div class="flex">
         <div class="pagetitle">
-            <h1>Create Voucher Set</h1>
+            <h1>Create Voucher</h1>
         </div>
-        <div>        
-          <a href="add-voucher.html" class="btn btn-primary">Back </a>
+        <div>
+            <a href="promotions.html" class="btn btn-primary">Back </a>
         </div>
     </div>
     
@@ -466,6 +425,53 @@
     <section class="section">
       <div class="row">
         <form>
+
+          <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
+            <div class="card-header"> <b>Voucher Settings </b></div>
+            <div class="card-body">
+              <h4 class="card-title">Voucher Codes</h4>
+              <!-- <div class="btn-group mt-2" role="group" id="btn-group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary active" id="vouchercode">Voucher Code</button>
+                <button type="button" class="btn btn-outline-primary" id="promocode">Promo Code</button>
+              </div> -->
+              <div class="mt-3">
+                <a class="btn btn-sm btn-outline-secondary" href="view-bulkvouchers.html" > <i class="bi bi-eye"></i> View Voucher Codes </a>
+              </div>
+              <div class="mt-2">
+                <label for="voucher-set-title" class="col-form-label">Voucher Set Title</label>
+                <input type="text" class="form-control" value="Black Friday Vouchers">
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <label for="number-codes" class="col-form-label">Number of Codes</label>
+                    <input class="form-control" type="number" placeholder="0" value="10">
+                </div>
+                <div class="col-md-4">
+                    <label for="codes-length" class="col-form-label">Code Length</label>
+                    <input class="form-control" type="number" placeholder="0" value="5">
+                </div>
+                <div class="col-md-4">
+                    <label class="col-form-label">Allowed Characters</label>
+                    <select class="form-select" aria-label="Select Allowed Characters">
+                        <option value="" selected disabled>Select Condition</option>
+                        <option selected value="1">Letters and Numbers</option>
+                        <option value="2">Letters Only</option>
+                        <option value="3">Numbers Only</option>
+                    </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                    <label for="voucher-prefix" class="col-form-label">Prefix(Optional)</label>
+                    <input type="text" class="form-control" value="BF">
+                </div>
+                <div class="col-md-4">
+                    <label for="voucher-suffix" class="col-form-label">Suffix(Optional)</label>
+                    <input type="text" class="form-control">
+                </div>
+              </div>              
+            </div>
+          </div>        
           <!-- Card with header and footer -->
           <div class="col-md-8 col-sm-12 card offset-md-2 card-border">
             <div class="card-header"> <b> Bulk Products Discount </b></div>
@@ -486,7 +492,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-check mb-2">
-                      <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" >
+                      <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" checked>
                       <label class="form-check-label" for="statusActive">
                         Active
                       </label>
@@ -503,7 +509,7 @@
                   <label class="col-form-label">Voucher Item Type</label>
                   <select class="form-select" aria-label="Select Type">
                     <option value="" selected disabled>Select Type</option>
-                    <option value="ella">ELLA</option>
+                    <option selected value="ella">ELLA</option>
                     <option value="food">FOOD</option>
                     <option value="combo">COMBO</option>
                   </select>
@@ -512,7 +518,7 @@
                     <label class="col-form-label">Country</label>
                     <select class="form-select" aria-label="Select Countries">
                         <option value="" selected disabled>Select Country</option>
-                        <option value="1">Singapore</option>
+                        <option selected value="1">Singapore</option>
                         <option value="2">Philippines</option>
                         <option value="3">Malaysia</option>
                     </select>
@@ -520,22 +526,22 @@
               </div>
               <div class="mt-2">
                 <label for="voucher-set-title" class="col-form-label">Voucher Set Title</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" value="Black Friday Vouchers">
               </div>
               <div class="row">
                 <div class="col-md-4">
                     <label for="number-codes" class="col-form-label">Number of Codes</label>
-                    <input class="form-control" type="number" placeholder="0">
+                    <input class="form-control" type="number" placeholder="0" value="10">
                 </div>
                 <div class="col-md-4">
                     <label for="codes-length" class="col-form-label">Code Length</label>
-                    <input class="form-control" type="number" placeholder="0">
+                    <input class="form-control" type="number" placeholder="0" value="5">
                 </div>
                 <div class="col-md-4">
                     <label class="col-form-label">Allowed Characters</label>
                     <select class="form-select" aria-label="Select Allowed Characters">
                         <option value="" selected disabled>Select Condition</option>
-                        <option value="1">Letters and Numbers</option>
+                        <option selected value="1">Letters and Numbers</option>
                         <option value="2">Letters Only</option>
                         <option value="3">Numbers Only</option>
                     </select>
@@ -544,7 +550,7 @@
               <div class="row">
                 <div class="col-md-4">
                     <label for="voucher-prefix" class="col-form-label">Prefix(Optional)</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" value="BF">
                 </div>
                 <div class="col-md-4">
                     <label for="voucher-suffix" class="col-form-label">Suffix(Optional)</label>
@@ -560,15 +566,15 @@
               </div> -->
               <div class="mt-2">
                 <label for="voucher-desc" class="col-form-label">Voucher Description</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" value="50% offer">
               </div>
               <div class="mt-2">
                 <label for="voucher-terms" class="col-form-label">Terms & Condition</label>
-                <textarea style="height: 150px" type="text" class="form-control"></textarea>
+                <textarea style="height: 150px" type="text" class="form-control">  Test Term & Condition  </textarea>
               </div>
               <div class="mt-2" id="voucher-img">
                 <label for="menu-img" class="col-form-label">Voucher Image (URL)</label>
-                <input type="text" id="menu-img-url" class="form-control">
+                <input type="text" id="menu-img-url" class="form-control" value="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp">
                 <button  class="mt-2 btn btn-outline-secondary" type="button" id="preview-button" name="preview">Preview</button>
               </div>
               <!-- Add an img tag to display the image -->
@@ -587,14 +593,14 @@
                 <div class="col-md-6">
                   <select id="discountValue" class="form-select" aria-label="Select Voucher Amount">
                     <option value="Fixed Amount">Fixed Amount</option>
-                    <option value="Percentage Amount">Percentage </option>
+                    <option selected value="Percentage Amount">Percentage </option>
                   </select>
                 </div>
                 <div class="col-md-6" id="fixedAmount">
                   <input type="number" class="form-control" placeholder="RM 0.00">
                 </div>
                 <div class="col-md-6" id="percentage" style="display: none;">
-                  <input type="number" class="form-control" placeholder="%">
+                  <input type="number" class="form-control" placeholder="%" value="50">
                 </div>
               </div>
               <h4 class="card-title">Applies To</h4>
@@ -606,7 +612,7 @@
                     <option value="" selected disabled>Select Type</option>
                     <option value="1">PUBLIC Restaurant </option>
                     <option value="2">CORPORATE Restaurant</option>
-                    <option value="3">ALL Restaurant</option>
+                    <option selected value="3">ALL Restaurant</option>
                   </select>
                 </div>
                 <div class="row mb-3" id="restaurant-row" style="display: none;">
@@ -642,7 +648,7 @@
                     </label>
                   </div>
                   <div class="col-md-6 form-check mb-2 restaurant-checkbox">
-                    <input class="form-check-input " name="restaurant" type="checkbox" id="all" >
+                    <input class="form-check-input " name="restaurant" type="checkbox" id="all" checked>
                     <label class="form-check-label" for="all">
                       ALL
                     </label>
@@ -681,7 +687,7 @@
                     </label>
                   </div>
                   <div class="col-md-6 form-check mb-2 restaurant-checkbox">
-                    <input class="form-check-input " name="corporate" type="checkbox" id="allcorporate" >
+                    <input class="form-check-input " name="corporate" type="checkbox" id="allcorporate" checked>
                     <label class="form-check-label" for="all">
                       ALL
                     </label>
@@ -705,7 +711,7 @@
                   <label class="col-form-label">Categories</label>
                   <select class="form-select" aria-label="Select Category" id="categories">
                       <option value="" selected disabled>Select Menu Category</option>                                    
-                      <option value="1">Coffee</option>
+                      <option selected value="1">Coffee</option>
                       <option value="2">Non-Coffee</option>
                       <option value="3">Food</option>
                       <option value="4"> All </option>
@@ -715,19 +721,19 @@
               <div class="row" id="coffee-row" style="display: none;">
                 <label class="col-form-label"> Coffee Menu</label>
                 <div class="col-md-6 form-check mb-2 restaurant-checkbox">
-                  <input class="form-check-input" name="product" type="checkbox" id="cappuccino">
+                  <input class="form-check-input" name="product" type="checkbox" id="cappuccino" checked>
                   <label class="form-check-label" for="cappuccino">
                     Clasic Cappuccino
                   </label>
                 </div>
                 <div class="col-md-6 form-check mb-2 restaurant-checkbox">
-                  <input class="form-check-input " name="product" type="checkbox" id="americano" >
+                  <input class="form-check-input " name="product" type="checkbox" id="americano" checked>
                   <label class="form-check-label" for="americano">
                     Americano
                   </label>
                 </div>
                 <div class="col-md-6 form-check mb-2 restaurant-checkbox">
-                  <input class="form-check-input" name="product" type="checkbox" id="flatwhite">
+                  <input class="form-check-input" name="product" type="checkbox" id="flatwhite" checked>
                   <label class="form-check-label" for="flatwhite">
                     Flat White
                   </label>
@@ -798,13 +804,13 @@
                     </label>
                   </div>
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="purchaseRequirements" id="minimumPurchase" value="option2">
+                    <input class="form-check-input" type="radio" name="purchaseRequirements" id="minimumPurchase" value="option2" checked>
                     <label class="form-check-label" for="minimumPurchase">
                       Minimum purchase amount
                     </label>
                   </div>
                   <div class="form-check minimum-amount mb-2" id="minimumAmount">
-                    <input class="form-control" type="number" placeholder="RM 0.00">
+                    <input class="form-control" type="number" placeholder="RM 0.00" value="20.00">
                   </div>
                   <div class="form-check mb-2">
                     <input class="form-check-input" type="radio" name="purchaseRequirements" id="minimumQuantity" value="option2">
@@ -876,13 +882,13 @@
                     <input class="form-control" type="number" placeholder="0">
                   </div>
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="checkbox" id="limitDay" >
-                    <label class="form-check-label" for="limitDay">
+                    <input class="form-check-input" type="checkbox" id="limitDay" checked >
+                    <label class="form-check-label" for="limitDay" >
                       Limit of uses per day by a customer
                     </label>
                   </div>
                   <div class="form-check limit-day" id="limituse">
-                    <input class="form-control" type="number" placeholder="0">
+                    <input class="form-control" type="number" placeholder="0" value="1">
                   </div>
                 </div>
               </div>
@@ -963,18 +969,18 @@
               <div class="row mb-3">
                 <div class="col-md-6">
                   <label for="startDate" class="col-form-label"> Start Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" value="2024-03-30">
                 </div>
                 <div class="col-md-6">
                   <label for="endDate" class="col-form-label">End Date</label>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" value="2024-05-30">
                 </div>
               </div>
               <h4 class="card-title">Day</h4>
               <div class="row mb-3">
                 <div class="col-md-12">
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="days" id="allDay" value="option1" >
+                    <input class="form-check-input" type="radio" name="days" id="allDay" value="option1" checked >
                     <label class="form-check-label" for="allDay">
                       All Days
                     </label>
@@ -1035,7 +1041,7 @@
               <div class="row mb-3">
                 <div class="col-md-12">
                   <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="time" id="anyTime" value="option1" >
+                    <input class="form-check-input" type="radio" name="time" id="anyTime" value="option1" checked >
                     <label class="form-check-label" for="anyTime">
                       Any Time
                     </label>
@@ -1297,8 +1303,9 @@
               checkbox.checked = this.checked;
             });
           }
-        
-          allCheckbox.addEventListener('change', handleRestaurantChange);
+          
+        // handleRestaurantChange(); 
+        allCheckbox.addEventListener('change', handleRestaurantChange);
 
 
           //handle CORPORATE checkbox
@@ -1312,6 +1319,7 @@
               });
           }
 
+        //   handleCorporateChange();
           allcorporate.addEventListener('change', handleCorporateChange);
 
 
@@ -1384,15 +1392,6 @@
           }
 
           categories.addEventListener("change", handleCategories)
-
-          // Function to toggle the dropdown menu visibility
-          function toggleDropdown() {
-            var dropdownMenu = document.getElementById("dropdownMenu");
-            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
-          }
-
-          var buttonsDropdown = document.getElementById("buttons-dropdown");
-          buttonsDropdown.addEventListener("click",toggleDropdown);
 
     })
 
