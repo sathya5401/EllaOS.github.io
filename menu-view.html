@@ -308,11 +308,11 @@
               <i class="bi bi-circle"></i><span>Manage Kiosk Templates</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="templates.html">
               <i class="bi bi-circle"></i><span>Templates</span>
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="menus.html">
               <i class="bi bi-circle"></i><span>Menus</span>
@@ -379,9 +379,9 @@
         <div class="col-6 pagetitle">
             <h1>Menu Details</h1>
         </div><!-- End Page Title -->
-        <div class="col-6 d-flex justify-content-end">
-            <a href="menus.html" class="btn btn-primary">Back </a>
-        </div>
+          <div class="col-6 d-flex justify-content-end">
+              <a href="menus.html" class="btn btn-primary">Back </a>
+          </div>
     </div>
 
     <section class="section">
@@ -391,12 +391,91 @@
                 <!-- Card with header and footer -->
                 <div class="col-8 card offset-sm-2 card-border">
                     <div class="card-header"> 
-                        <b>Americano</b>
+                        <b>Ámericano</b>
                     </div>
                     <div class="card-body">
+                          <div class="row mt-2">
+                            <legend class="col-form-label">Status</legend>
+                            <div class="col-md-12">
+                              <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="voucherStatus" id="statusActive" value="active" checked >
+                                <label class="form-check-label" for="statusActive">
+                                  Active
+                                </label>
+                              </div>
+                              <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="voucherStatus" id="statusInactive" value="inactive">
+                                <label class="form-check-label" for="statusInactive">
+                                  Inactive
+                                </label>
+                              </div>
+                            </div> 
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <label for="menu-name" class="col-form-label">Menu SKU</label>
+                              <input type="text" class="form-control" value="M112344Ella">
+                            </div>
+                          </div>
+                          <div class="row mt-2">
+                            <div class="col-md-6">
+                              <label class="col-form-label">Categories</label>
+                              <select class="form-select" aria-label="Select Menu Category">
+                                  <option value="" selected disabled>Select Menu Category</option>                                    
+                                  <option selected value="1">Coffee</option>
+                                  <option value="2">Non-Coffee</option>
+                                  <option value="3">Food</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="menu-name" class="col-form-label">Name</label>
+                              <input type="text" class="form-control" value="Americano">
+                            </div>
+                          </div>
                         <div class="mt-2">
-                            <label for="menu-name" class="col-form-label">Name</label>
-                            <input type="text" class="form-control" value="Americano">
+                          <legend class="col-form-label">Combination Drink</legend>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="combinationDrink" id="combinationDrinkYes" value="yes" >
+                            <label class="form-check-label" for="statusActive">
+                              Yes
+                            </label>
+                          </div>
+                          <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="combinationDrink" id="combinationDrinkNo" value="no" checked>
+                            <label class="form-check-label" for="statusInactive" >
+                              No
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mt-2" id="preselected" style="display: none;">
+                          <label class="col-form-label">Pre-Selected Syrup</label>
+                          <select class="form-select" aria-label="Select Menu Category">
+                              <option value="" selected disabled>Select Menu Category</option>                                    
+                              <option value="1">Sugar</option>
+                              <option value="2">Caramel</option>
+                              <option value="3">Hazelnut</option>
+                          </select>
+                        </div>
+                        <div class="col-md-6 mt-2" id="addOn" style="display: none;">
+                          <label class="col-form-label">Select Addon Syrup</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sugar" checked>
+                            <label class="form-check-label" for="sugar">
+                              Sugar
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="caramel" checked>
+                            <label class="form-check-label" for="caramel">
+                              Caramel
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hazelnut" checked >
+                            <label class="form-check-label" for="hazelnut">
+                              Hazelnut
+                            </label>
+                          </div>
                         </div>
                         <div class="mt-2">
                           <label for="menu-img" class="col-form-label">Image URL</label>
@@ -405,42 +484,55 @@
                         </div>
                         <!-- Add an img tag to display the image -->
                         <div class="mt-2" id="image-preview-container">
-                            <img id="image-preview" src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" alt="Image Preview" style="max-width: 100%; max-height: 200px;">
-                        </div> 
+                            <img id="image-preview" src="#" alt="Image Preview" style="max-width: 100%; max-height: 200px; display: none;">
+                        </div>                 
                         <div class="mt-2">
                             <label for="menu-desc" class="col-form-label">Description</label>
                             <textarea style="height: 150px" type="text" class="form-control">
-                                Experience the irresistible allure of our Americano and let its boldness awaken your senses. Savor the robust aroma, relish the invigorating flavor, and allow the rich coffee notes to linger on your palate. Embrace the uncompromising strength and simplicity of this classic coffee beverage that stands the test of time.
+                              Experience the irresistible allure of our Americano and let its boldness awaken your senses. Savor the robust aroma, relish the invigorating flavor, and allow the rich coffee notes to linger on your palate. Embrace the uncompromising strength and simplicity of this classic coffee beverage that stands the test of time.
                             </textarea>
                         </div>
-                        <div class="mt-2">
+                        <div class="row mt-2">
+                          <div class="col-md-6">
                             <label class="col-form-label">Country</label>
                             <select class="form-select" aria-label="Select Countries">
                                 <option value="" selected disabled>Select Country</option>                                    
-                                <option value="1">Singapore</option>
-                                <option value="2" >Philippines</option>
-                                <option value="3" selected>Malaysia</option>
+                                <option  value="1">Singapore</option>
+                                <option value="2">Philippines</option>
+                                <option selected value="3">Malaysia</option>
                             </select>
-                        </div>
-                        <div class="row mt-2">
-                          <div class="col-6">
+                          </div>
+                          <div class="col-md-6">
                             <label for="menu-currency" class="col-form-label">Currency</label>
                             <input type="text" class="form-control" placeholder="RM" value="RM">
                           </div>
+                        </div>
+                        <div class="row mt-2">
                           <div class="col-6">
-                            <label for="menu-price" class="col-form-label">Price</label>
-                            <input type="number" class="form-control" placeholder="0.00" value="7.00">
+                            <label for="app-price" class="col-form-label">Base App Price</label>
+                            <input type="number" class="form-control" placeholder="0.00" value="10.00">
+                          </div>
+                          <div class="col-6">
+                            <label for="kiosk-price" class="col-form-label">Base Kiosk Price</label>
+                            <input type="number" class="form-control" placeholder="0.00" value="10.00">
                           </div>
                         </div>
                         <div class="mt-2">
-                            <label for="menu-drizzle" class="col-form-label">Add Drizzle</label>
+                            <label for="discount" class="col-form-label">Discount</label>
                             <div class="form-check form-switch">
                                 <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" checked>
                                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                             </div>
-                            <div id="drizzle-input" style="display: none;">
-                                <!-- <input type="text" class="form-control" placeholder="Enter drizzle"> -->
-                            </div>
+                        </div>
+                        <div class="row mt-2" style="display: none;" id="discountPrice">
+                          <div class="col-6">
+                            <label for="discount-app-price" class="col-form-label">Discount App Price</label>
+                            <input type="number" class="form-control" placeholder="0.00" value="7.00">
+                          </div>
+                          <div class="col-6">
+                            <label for="discount-kiosk-price" class="col-form-label">Discount Kiosk Price</label>
+                            <input type="number" class="form-control" placeholder="0.00" value="7.00">
+                          </div>
                         </div>
                         <div class="mt-2">
                           <label for="menu-recipe" class="col-form-label">Recipe</label>
@@ -449,6 +541,11 @@
                     </div>
                 </div><!-- End Card with header and footer -->
             </div>
+            <div class="row">
+              <div class="col-12 d-flex justify-content-end">
+                  <a href="menus.html" class="btn btn-outline-primary ">Add</a>
+              </div>
+          </div>
         </form>
 
     </section>
@@ -483,7 +580,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", function() {
         const menuImgInput = document.getElementById("menu-img-url");
@@ -505,12 +601,54 @@
 
         // Add click event listener to the Preview button
         previewButton.addEventListener("click", function() {
-          // event.preventDefault(); 
+          event.preventDefault(); 
           updateImagePreview();
         });
 
+        var discount = document.getElementById("flexSwitchCheckDefault");
+        var discountPrice = document.getElementById("discountPrice");
+
+        function showDiscountFields() {
+          if (discount.checked){
+            discountPrice.style.display = "flex";
+          }
+          else if (!discount.checked) {
+            discountPrice.style.display = "none";
+          }
+        }
+
+        showDiscountFields();
+        discount.addEventListener("change", showDiscountFields);
+
+        var combinationDrinkYes = document.getElementById("combinationDrinkYes");
+        var combinationDrinkNo = document.getElementById("combinationDrinkNo");
+        var preselected = document.getElementById("preselected");
+        var addOn = document.getElementById("addOn");
+
+        function handleCombinationDrink() {
+          if(combinationDrinkYes.checked) {
+            preselected.style.display = "block"; // Change flex to block
+            addOn.style.display = "none"; 
+          }
+          else if (combinationDrinkNo.checked) {
+            preselected.style.display = "none";
+            addOn.style.display = "block"; // Change flex to block
+          }
+        }
+
+        handleCombinationDrink();
+
+        // Add event listeners to the radio buttons
+        combinationDrinkYes.addEventListener("change", handleCombinationDrink);
+        combinationDrinkNo.addEventListener("change", handleCombinationDrink);
+
+
+
     });
 </script>
+
+
+
 
 </body>
 
