@@ -40,7 +40,11 @@
 <style>
 
 .card-border {
-    border-radius: 1rem;
+  border-radius: 1rem;
+}
+
+.restaurant-checkbox {
+  padding-left: 6%;
 }
 
 
@@ -387,22 +391,165 @@
     <section class="section">
         
         <form>
-            <div class="row">
-                <!-- Card with header and footer -->
-                <div class="col-8 card offset-sm-2 card-border">
-                    <div class="card-header"> 
-                        <b>New Event</b>
+            <!-- Card with header and footer -->
+            <div class="col-md-10 card offset-sm-1 card-border">
+                  <div class="card-header"> 
+                        <b>Event Details</b>
+                  </div>
+                  <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                          <label for="client-name" class="col-form-label">Client Name</label>
+                          <input type="text" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                          <label class="col-form-label">Cart Model</label>
+                          <select class="form-select" aria-label="Select Cart" id="cartModel">
+                              <option value="" selected disabled>Select Cart</option>                                    
+                              <option value="1">Ella X</option>
+                              <option value="2">Ella XR</option>
+                              <option value="3">Ella XS</option>
+                          </select>
+                          
+                        </div>
                     </div>
-                    <div class="card-body">
-
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                          <label for="client-location" class="col-form-label">Location</label>
+                          <input type="text" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                          <label for="client-country" class="col-form-label">Country</label>
+                          <input type="text" class="form-control">                      
+                        </div>
                     </div>
-                </div><!-- End Card with header and footer -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                          <label for="startDate" class="col-form-label"> Start Date</label>
+                          <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="endDate" class="col-form-label">End Date</label>
+                          <input type="date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-3" id="timeInput">
+                        <div class="col-md-6">
+                          <label for="inputTime" class="col-form-label">Start Time</label>
+                          <input type="time" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputTime" class="col-form-label">End Time</label>
+                          <input type="time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                          <label for="number-cups" class="col-form-label">Number of Cups</label>
+                          <input type="number" class="form-control">
+                        </div> 
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="cups-desc" class="col-form-label">Cups Description</label>
+                        <textarea style="height: 50px" type="text" class="form-control"></textarea>
+                    </div>
+                  </div><!-- End Card with header and footer -->
             </div>
+
+            <div class="col-md-10 card offset-sm-1 card-border">
+              <div class="card-header"> 
+                    <b>Menu Details</b>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="col-form-label">Categories</label>
+                    <select class="form-select" aria-label="Select Category" id="categories">
+                        <option value="" selected disabled>Select Menu Category</option>                                    
+                        <option value="1">Coffee</option>
+                        <option value="2">Non-Coffee</option>
+                        <option value="3">Food</option>
+                        <option value="4"> All </option>
+                    </select>
+                  </div>       
+                </div>
+                <div class="row" id="coffee-row" style="display: none;">
+                  <label class="col-form-label"> Coffee Menu</label>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="product" type="checkbox" id="cappuccino">
+                    <label class="form-check-label" for="cappuccino">
+                      Clasic Cappuccino
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="product" type="checkbox" id="americano" >
+                    <label class="form-check-label" for="americano">
+                      Americano
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="product" type="checkbox" id="flatwhite">
+                    <label class="form-check-label" for="flatwhite">
+                      Flat White
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="product" type="checkbox" id="latte" >
+                    <label class="form-check-label" for="latte">
+                      Latte
+                    </label>
+                  </div>
+                </div>
+                <div class="row" id="noncoffee-row" style="display: none;">
+                  <label class="col-form-label"> Non-Coffee Menu</label>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="product" type="checkbox" id="tealatte">
+                    <label class="form-check-label" for="tealatte">
+                      Tea Latte
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="product" type="checkbox" id="chocolate" >
+                    <label class="form-check-label" for="chocolate">
+                      Classic Chocolate
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="product" type="checkbox" id="pandantea">
+                    <label class="form-check-label" for="pandantea">
+                      Pandan Tea Latte
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="product" type="checkbox" id="vanillamilk" >
+                    <label class="form-check-label" for="vanillamilk">
+                      Vanilla Milk
+                    </label>
+                  </div>
+                </div>
+                <div class="row" id="food-row" style="display: none;">
+                  <label class="col-form-label"> Food Menu</label>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input" name="product" type="checkbox" id="food1">
+                    <label class="form-check-label" for="food1">
+                      Food 1
+                    </label>
+                  </div>
+                  <div class="col-md-6 form-check mb-2 restaurant-checkbox">
+                    <input class="form-check-input " name="product" type="checkbox" id="food2" >
+                    <label class="form-check-label" for="food2">
+                      Food 2
+                    </label>
+                  </div>
+                </div>
+              </div><!-- End Card with header and footer -->
+            </div>  
+
             <div class="row">
               <div class="col-12 d-flex justify-content-end">
-                  <a href="" class="btn btn-outline-primary ">Add</a>
+                <a href="" class="btn btn-outline-primary ">Add</a>
               </div>
-          </div>
+            </div>
         </form>
 
     </section>
@@ -438,7 +585,48 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script>
 
+    document.addEventListener("DOMContentLoaded", function() {
+          // handle CATEGORIES - PRODUCTS
+          var coffeeRow = document.getElementById("coffee-row")
+          var nonCoffeeRow = document.getElementById("noncoffee-row")
+          var foodRow = document.getElementById("food-row")
+          var categories = document.getElementById("categories")
+
+
+          function handleCategories() {
+            if (categories.value === "1"){
+              coffeeRow.style.display = "flex"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "none"
+            }
+            else if (categories.value === "2") {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "flex"
+              foodRow.style.display = "none"
+            }
+            else if (categories.value === "3") {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "flex"
+            }
+            else if (categories.value === "4") {
+              coffeeRow.style.display = "flex"
+              nonCoffeeRow.style.display = "flex"
+              foodRow.style.display = "flex"
+            }
+            else {
+              coffeeRow.style.display = "none"
+              nonCoffeeRow.style.display = "none"
+              foodRow.style.display = "none"
+            }     
+          }
+
+          categories.addEventListener("change", handleCategories)
+    })
+
+  </script>
 
 
 </body>

@@ -36,6 +36,16 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+<style> 
+.flex{
+  display : flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+</style>
 </head>
 
 <body>
@@ -375,35 +385,72 @@
         </nav>
       </div>
       <div class="col-6 d-flex justify-content-end align-items-start">
-        <a href="add-event.html" class="btn btn-primary"> Add Event </a>
+        <a href="add-event.html" class="btn btn-outline-primary"> Add Event + </a>
       </div>
     </div>
 
     <div class="row">
-      <div class="row">
-        <div class="card">
-            <div class="card-body">
+      <div class="card">
+        <div class="card-body">
+          <div class="flex">
             <h5 class="card-title">Manage Events</h5>
-            <!-- Table with hoverable rows -->
-            <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">No</th>
-                    <th scope="col"> Template Name </th>
-                    <th scope="col"> Country </th>
-                    <th scope="col"> Active Kiosks </th>
-                    <th scope="col"> Action</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-            <!-- End Table with hoverable rows -->
-
+            <div class="row mt-2">
+              <div class="col-md-12">
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+                </div>
+              </div>
             </div>
+          </div>
+          <!-- Table with hoverable rows -->
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col"> Client Name </th>
+                  <th scope="col"> Cart Model </th>
+                  <th scope="col"> Location </th>
+                  <th scope="col"> Country </th>
+                  <th scope="col"> Start Date </th>
+                  <th scope="col"> End Date </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td> Chubb Insurance </td>
+                  <td> Ella XR </td>
+                  <td> Queen Sirikit National Convention Center,Bangkok </td>
+                  <td> Thailand</td>
+                  <td> 2024-04-23 </td>
+                  <td> 2024-04-25</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td> DBS Singapore </td>
+                  <td> Ella XS </td>
+                  <td> DBS Asia Hub,2 Changi Business Park Cres </td>
+                  <td> Singapore</td>
+                  <td> 2024-03-11 </td>
+                  <td> 2024-03-15</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td> The JTC Summit </td>
+                  <td> Ella X </td>
+                  <td> 8 Jurong Town Hall Rd </td>
+                  <td> Singapore</td>
+                  <td> 2024-04-24 </td>
+                  <td> 2024-04-24</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- End Table with hoverable rows -->
         </div>
-    </div>
+      </div>
     </div>
 
 
