@@ -305,7 +305,7 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="kiosk-template.html">
-              <i class="bi bi-circle"></i><span>Manage Kiosk Templates</span>
+              <i class="bi bi-circle"></i><span>Manage Restaurants</span>
             </a>
           </li>
           <!-- <li>
@@ -420,12 +420,38 @@
                           <div class="row mt-2">
                             <div class="col-md-6">
                               <label class="col-form-label">Categories</label>
-                              <select class="form-select" aria-label="Select Menu Category">
+                              <select class="form-select" aria-label="Select Menu Category" id="menuCategory">
                                   <option value="" selected disabled>Select Menu Category</option>                                    
                                   <option value="1">Coffee</option>
                                   <option value="2">Non-Coffee</option>
                                   <option value="3">Food</option>
                               </select>
+                              <div class="mt-2">
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addCategory">
+                                  Add Category +
+                                </button>
+                                <div class="modal fade" id="addCategory" tabindex="-1">
+                                  <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Adjust the width as needed -->
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Add Category</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div class="row">
+                                          <label id="new-category" for="new-category" class="col-sm-2 col-form-label">Category</label>
+                                          <div class="col-sm-10">
+                                            <input type="text" class="form-control">
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-light"  id="add">Add</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
                             <div class="col-md-6">
                               <label for="menu-name" class="col-form-label">Name</label>
@@ -635,9 +661,34 @@
 
         handleCombinationDrink();
 
-        // Add event listeners to the radio buttons
-        combinationDrinkYes.addEventListener("change", handleCombinationDrink);
-        combinationDrinkNo.addEventListener("change", handleCombinationDrink);
+
+        var addButton = document.getElementById("add");
+
+        function AddCategories() {
+          var newCategoryName = document.getElementById("new-category").value;
+          console.log(newCategoryName + "1");
+          if (newCategoryName !== "") {
+                // Add the new option to the dropdown menu
+                var categoryDropdown = document.getElementById("menuCategory");
+                var newOption = document.createElement("option");
+                newOption.value = newCategoryName;
+                newOption.textContent = newCategoryName;
+                categoryDropdown.appendChild(newOption);
+
+                // Select the newly added category in the dropdown menu
+                newOption.selected = true;
+
+                // Close the modal
+                $('#addCategory').modal('hide');
+            }
+            console.log("After IF")
+        }
+
+        addButton.addEventListener("click", function() {
+          AddCategories();
+          console.log("add")
+        })
+
 
 
 

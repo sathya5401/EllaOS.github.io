@@ -68,6 +68,41 @@
   padding: 3% 0% 0% 6%;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+  /* Style the dropdown toggle button */
+.dropdown-toggle {
+  /* background-color: #3498db; */
+  /* color: #fff; */
+  /* border: none; */
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  padding: 10px;
+  /* background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1; */
+}
+
+  /* Style the dropdown menu items */
+.dropdown-menu button {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 
 
 </style>
@@ -331,14 +366,14 @@
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="kiosk-template.html">
-              <i class="bi bi-circle"></i><span>Manage Kiosk Templates</span>
+              <i class="bi bi-circle"></i><span>Manage Restaurants</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="templates.html">
               <i class="bi bi-circle"></i><span>Templates</span>
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="menus.html">
               <i class="bi bi-circle"></i><span>Menus</span>
@@ -401,17 +436,25 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Manage ELLA App Contents </h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item">Marketing</li>
-          <li class="breadcrumb-item active">App</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+    <div class="row">
+      <div class="col-md-10 pagetitle">
+        <h1>Manage ELLA App Contents </h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item">Pages</li>
+            <li class="breadcrumb-item">Marketing</li>
+            <li class="breadcrumb-item active">App</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-md-2 dropdown">
+        <button class="dropdown-toggle btn btn-outline-secondary" id="buttons-dropdown">App Settings</button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="app-privacy.html" class="btn btn-sm btn-light" style="width: 100%;"> Privacy T&C   <i class="bi bi-check-circle"></i></a>
+        </div>
+      </div>          
+    </div>
 
     <section class="section">
       <div class="row">
@@ -492,6 +535,21 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Function to toggle the dropdown menu visibility
+      function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+      }
+
+      var buttonsDropdown = document.getElementById("buttons-dropdown");
+      buttonsDropdown.addEventListener("click",toggleDropdown);
+    })
+
+  </script>
 
 </body>
 
