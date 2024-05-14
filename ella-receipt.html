@@ -39,34 +39,7 @@
 
 <style>
 
-.card-header {
-  padding: 7px 0px 0px 0px;
-}
 
-.header-weight{
-  font-weight: bold;
-  position: absolute;
-  right: 45%
-}
-
-.img-card {
-    /* position: relative; */
-    padding-top: 2%;
-}
-
-.edit-btn {
-  width: 25%;
-  height: 90%;
-}
-
-/* .img-card:hover .edit-btn {
-    display: inline-block;
-} */
-
-.col-card {
-  width: 40%;
-  padding: 3% 0% 0% 6%;
-}
 </style>
 
 </head>
@@ -407,113 +380,127 @@
             <li class="breadcrumb-item">Pages</li>
             <li class="breadcrumb-item">Marketing</li>
             <li class="breadcrumb-item">Carts</li>
-            <li class="breadcrumb-item active">Cart 1</li>
+            <li class="breadcrumb-item">Cart 1</li>
+            <li class="breadcrumb-item active">Receipt</li>
           </ol>
         </nav>
       </div>
       <div class="col-md-6 d-flex justify-content-end align-items-start">
-        <a href="ella-receipt.html" class="btn btn-outline-secondary" style="margin-right: 1%;"> Receipt Settings </a>
-        <a href="ella-content.html" class="btn btn-primary">Back </a>
+        <!-- <a href="ella-receipt.html" class="btn btn-outline-secondary" style="margin-right: 1%;"> Receipt Settings </a> -->
+        <a href="cart-1.html" class="btn btn-primary">Back </a>
       </div>
     </div>
 
 
     <section class="section">
-      <div class="row">
-        <div class="col-md-6 col-card">
-          <div class="card card-border">
-            <div class="card-header">
-              <div class="row">
-                <div class="col-md-8 d-flex justify-content-center align-items-center">
-                  <h5 class="header-weight "> Front-TV</h5>
+        <form id="receiptSettingsForm">
+            <div class="row">
+                <!-- Card with header and footer -->
+                <div class="col-8 offset-sm-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <b>Receipt Settings</b>
+                        </div>
+                        <div class="card-body">
+                            <!-- Logo -->
+                            <div class="mb-3">
+                                <label for="logoImage" class="form-label">Company Logo</label>
+                                <input type="file" class="form-control" id="logoImage">
+                            </div>
+                            
+                            <!-- Text Content -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="address">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">email</label>
+                                    <input type="text" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="textContent" class="form-label">Text Content</label>
+                                <textarea class="form-control" id="textContent" rows="3"></textarea>
+                            </div>
+                            
+                            <!-- Font Size and Style -->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="fontSize" class="form-label">Font Size</label>
+                                    <select class="form-select" id="fontSize">
+                                        <option value="small">Small</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="large">Large</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="fontStyle" class="form-label">Font Style</label>
+                                    <select class="form-select" id="fontStyle">
+                                        <option value="normal">Normal</option>
+                                        <option value="bold">Bold</option>
+                                        <option value="italic">Italic</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Paper Size and Orientation -->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="paperSize" class="form-label">Paper Size</label>
+                                    <select class="form-select" id="paperSize">
+                                        <option value="A4">A4</option>
+                                        <option value="Letter">Letter</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="orientation" class="form-label">Orientation</label>
+                                    <select class="form-select" id="orientation">
+                                        <option value="portrait">Portrait</option>
+                                        <option value="landscape">Landscape</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Margins -->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="marginTop" class="form-label">Top Margin (mm)</label>
+                                    <input type="number" class="form-control" id="marginTop">
+                                </div>
+                                <div class="col">
+                                    <label for="marginBottom" class="form-label">Bottom Margin (mm)</label>
+                                    <input type="number" class="form-control" id="marginBottom">
+                                </div>
+                            </div>
+                            
+                            <!-- Barcode Format and Placement -->
+                            <!-- <div class="row mb-3">
+                                <div class="col">
+                                    <label for="barcodeFormat" class="form-label">Barcode Format</label>
+                                    <input type="text" class="form-control" id="barcodeFormat">
+                                </div>
+                                <div class="col">
+                                    <label for="barcodePlacement" class="form-label">Barcode Placement</label>
+                                    <input type="text" class="form-control" id="barcodePlacement">
+                                </div>
+                            </div>
+                             -->
+                            <!-- Save Button -->
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Card with header and footer -->
                 </div>
-                <div class="col-md-4 d-flex justify-content-end align-items-start" style="padding-right: 4%;">
-                  <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a>
-                </div>
-              </div>
             </div>
-            <div class="card-body">
-              <div class="col-12">
-                  <div class="img-card position-relative">
-                      <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                      <!-- <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a> -->
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-card" style="margin-left: 8%;">
-          <div class="card card-border">
-            <div class="card-header">
-              <div class="row">
-                <div class="col-md-8 d-flex justify-content-center align-items-center">
-                  <h5 class="header-weight "> Back-TV</h5>
-                </div>
-                <div class="col-md-4 d-flex justify-content-end align-items-start" style="padding-right: 4%;">
-                  <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="col-12">
-                  <div class="img-card position-relative">
-                      <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                      <!-- <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a> -->
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-card">
-          <div class="card card-border">
-            <div class="card-header">
-              <div class="row">
-                <div class="col-md-8 d-flex justify-content-center align-items-center">
-                  <h5 class="header-weight "> ELO </h5>
-                </div>
-                <div class="col-md-4 d-flex justify-content-end align-items-start" style="padding-right: 4%;">
-                  <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="col-12">
-                  <div class="img-card position-relative">
-                      <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                      <!-- <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a> -->
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-card" style="margin-left: 8%;">
-          <div class="card card-border">
-            <div class="card-header">
-              <div class="row">
-                <div class="col-md-8 d-flex justify-content-center align-items-center">
-                  <h5 class="header-weight "> Left-Screen</h5>
-                </div>
-                <div class="col-md-4 d-flex justify-content-end align-items-start" style="padding-right: 4%;">
-                  <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="col-12">
-                  <div class="img-card position-relative">
-                      <img src="https://ella-cms-dev.s3.ap-southeast-1.amazonaws.com/Americano_74fa5fb3dd.webp" class="card-img-top" alt="...">
-                      <!-- <a href="frontTv-content.html" class="btn btn-danger btn-sm edit-btn" title="Edit Content"><i class="bi bi-pen"></i></a> -->
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+        </form>
     </section>
+    
+    
 
   </main><!-- End #main -->
 
