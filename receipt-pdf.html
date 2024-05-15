@@ -8,6 +8,7 @@
   <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -38,15 +39,8 @@
   ======================================================== -->
 
 <style>
-.receipt-preview-container {
-  max-width: 100%;
-  overflow-x: auto;
-}
 
-.receipt-preview-container embed {
-  width: 100%; /* Adjust as needed */
-  /* height: auto; */
-}
+
 </style>
 
 </head>
@@ -378,129 +372,20 @@
 
   <main id="main" class="main">
 
-    <div class="row">
-      <div class="col-md-6 pagetitle">
-        <h1>Cart 1 </h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item">Pages</li>
-            <li class="breadcrumb-item">Marketing</li>
-            <li class="breadcrumb-item">Carts</li>
-            <li class="breadcrumb-item">Cart 1</li>
-            <li class="breadcrumb-item active">Receipt</li>
-          </ol>
-        </nav>
-      </div>
-      <div class="col-md-6 d-flex justify-content-end align-items-start">
-        <!-- <a href="ella-receipt.html" class="btn btn-outline-secondary" style="margin-right: 1%;"> Receipt Settings </a> -->
-        <a href="cart-1.html" class="btn btn-primary">Back </a>
-      </div>
-    </div>
+
 
 
     <section class="section">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="card">
-            <div class="card-body">
-              <form id="receiptSettingsForm">
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="logoImage" class="form-label">Logo Image:</label>
-                    <input type="file" id="logoImage" accept="image/jpeg, image/png" class="form-control">
-                  </div>
-                  <!-- <div class="col-md-6">
-                    <label for="orderNumber" class="form-label">Order Number:</label>
-                    <input type="text" id="orderNumber" value="123456" class="form-control">
-                  </div> -->
-                </div>
-              
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="qrTextAbove" class="form-label">QR Text Above:</label>
-                    <input type="text" id="qrTextAbove" value="Scan me" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="qrCode" class="form-label">QR Code:</label>
-                    <input type="text" id="qrCode" value="https://www.crowndigital.io" class="form-control">
-                  </div>
-                </div>
-              
-                <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="qrTextBelow" class="form-label">QR Text Below:</label>
-                    <input type="text" id="qrTextBelow" value="Visit our website" class="form-control">
-                  </div>
-                  <!-- <div class="col-md-6">
-                    <label for="gstNo" class="form-label">GST No:</label>
-                    <input type="text" id="gstNo" value="1234567890" class="form-control">
-                  </div> -->
-                </div>
-              
-                <div class="row mb-4">
-                  <!-- <div class="col-md-6">
-                    <label for="receiptNo" class="form-label">Receipt No:</label>
-                    <input type="text" id="receiptNo" value="987654" class="form-control">
-                  </div> -->
-                  <div class="col-md-6">
-                    <label for="email" class="form-label">Email:</label>
-                    <input type="text" id="email" value="help@crowndigital.io" class="form-control">
-                  </div>
-                </div>
-              
-                <!-- <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="orderTime" class="form-label">Order Time:</label>
-                    <input type="text" id="orderTime" value="2023-03-23 10:30:00" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="items" class="form-label">Items:</label>
-                    <textarea id="items" rows="4" class="form-control">
-                      Item 1: $10.00
-                      Item 2: $15.00
-                      Item 3: $20.00
-                    </textarea>
-                  </div>
-                </div> -->
-              
-                <!-- <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="totalFee" class="form-label">Total Fee:</label>
-                    <input type="text" id="totalFee" value="$45.00" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="gst" class="form-label">GST:</label>
-                    <input type="text" id="gst" value="$3.15" class="form-control">
-                  </div>
-                </div> -->
-              
-                <div class="row mb-4">
-                  <div class="col-md-12">
-                    <label for="footerText" class="form-label">Footer Text:</label>
-                    <input type="text" id="footerText" value="Thank you for your purchase!" class="form-control">
-                  </div>
-                </div>
-              
-                <div class="row">
-                  <div class="col-md-12">
-                    <button type="submit" class="btn btn-primary">Save</button>
-                  </div>
-                </div>
-              </form>
-              
-              
-            </div>
-          </div>
+        <div id="previewArea">
+            <button id="btn" > Generate PDF preview </button>
         </div>
-        <div class="col-md-4 mt-4">
-          <h2>Receipt Preview</h2>
-          <div class="receipt-preview-container" id="receiptPreview"></div>
+        <div>
+            <iframe id="pdf-preview" src="about:blank"></iframe>
         </div>
-      </div>
     </section>
-
-
+    
+    
+    
 
   </main><!-- End #main -->
 
@@ -533,75 +418,40 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 <script>
+
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("receiptSettingsForm");
-  const receiptPreview = document.getElementById("receiptPreview");
+        
+    var button = document.getElementById("btn");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
+    button.addEventListener("click", function() {
+        console.log("from save");
+        const doc = new jspdf.jsPDF();
+        doc.text("Hello world!", 10, 10);
+        const pdfDataUri = doc.output('datauristring');
+        console.log("before display")
+        displayPDF(pdfDataUri)
 
-    const logoImage = document.getElementById("logoImage").files[0];
-    // const orderNumber = document.getElementById("orderNumber").value;
-    const qrTextAbove = document.getElementById("qrTextAbove").value;
-    const qrCode = document.getElementById("qrCode").value;
-    const qrTextBelow = document.getElementById("qrTextBelow").value;
-    // const gstNo = document.getElementById("gstNo").value;
-    // const receiptNo = document.getElementById("receiptNo").value;
-    const email = document.getElementById("email").value;
-    // const orderTime = document.getElementById("orderTime").value;
-    // const items = document.getElementById("items").value;
-    // const totalFee = document.getElementById("totalFee").value;
-    // const gst = document.getElementById("gst").value;
-    const footerText = document.getElementById("footerText").value;
+        // doc.save("a4.pdf");
+    });
 
-    const doc = new jspdf.jsPDF('p', 'mm', [90, 300]);
+    function displayPDF(dataUri) {
+        console.log("from function")
+        const previewArea = document.getElementById("previewArea");
+        const iframe = document.createElement("iframe");
+        iframe.setAttribute("src", dataUri);
+        iframe.setAttribute("width", "100%");
+        iframe.setAttribute("height", "500px"); // Adjust height as needed
 
-    // Add logo image
-    if (logoImage) {
-      const img = new Image();
-      img.src = URL.createObjectURL(logoImage);
-      img.onload = function() {
-        doc.addImage(img, 'JPEG', 25, 15, 25, 25);
-        addContent();
-      };
-    } else {
-      addContent();
-    }
-
-    function addContent() {
-      // Add order number and QR code
-      doc.text("Order: 001", 15, 50);
-      doc.text(qrTextAbove, 15, 60);
-      doc.text(qrCode, 15, 70);
-      doc.text(qrTextBelow, 15, 80);
-
-      // Add GST no, receipt no, email, and order time
-      doc.text("GST No: 111232" ,15, 100);
-      doc.text("Receipt No: 23344" , 15, 110);
-      doc.text("Email: " + email, 15, 120);
-      doc.text("Order Time: 2023/03/23", 15, 130);
-
-      doc.text('Item 1: $10.00', 15, 150)
-      doc.text('Item 2: $10.00', 15, 160)
-      doc.text('Item 3: $10.00', 15, 170)
-
-
-      // Add total fee and GST
-      doc.text("Total Fee: $30.00", 15, 190);
-      doc.text("GST: $4.00" , 15, 210);
-
-      // Add footer text
-      doc.text(footerText, 15,  240);
-
-      // Display the PDF in the preview area
-      receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600">';
-    }
-  });
+        previewArea.innerHTML = ""; // Clear any previous content
+        previewArea.appendChild(iframe);
+        console.log("end function")
+        }
 });
 
+ 
 </script>
+
 
 
 </body>
