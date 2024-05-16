@@ -47,6 +47,12 @@
   width: 100%; /* Adjust as needed */
   /* height: auto; */
 }
+
+.card-body {
+  padding: 10px 20px 20px 20px;
+}
+
+
 </style>
 
 </head>
@@ -404,84 +410,135 @@
         <div class="col-md-8">
           <div class="card">
             <div class="card-body">
+              <label class="col-form-label">Section</label>
+              <select class="form-select mb-4" aria-label="Select Section" id="sectionReceipt" style="width: 50%;">
+                <option value="header" selected>Header</option>                                    
+                <option value="body">Body</option>
+                <option value="footer">Footer</option>
+              </select>
               <form id="receiptSettingsForm">
-                <div class="row mb-4">
+                <div class="row mb-4" id="headerSection" style="display: none;">
                   <div class="col-md-6">
                     <label for="logoImage" class="form-label">Logo Image:</label>
                     <input type="file" id="logoImage" accept="image/jpeg, image/png" class="form-control">
                   </div>
-                  <!-- <div class="col-md-6">
+                  <div class="col-md-3">
+                    <label for="logoX" class="form-label"> X:</label>
+                    <input type="text" id="logoX" value="25" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="logoY" class="form-label"> Y:</label>
+                    <input type="text" id="logoY" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-6">
                     <label for="orderNumber" class="form-label">Order Number:</label>
-                    <input type="text" id="orderNumber" value="123456" class="form-control">
-                  </div> -->
-                </div>
-              
-                <div class="row mb-4">
+                    <input type="text" id="orderNumber" value="001" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="ordernumberX" class="form-label"> X:</label>
+                    <input type="text" id="ordernumberX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="ordernumberY" class="form-label">Y:</label>
+                    <input type="text" id="ordernumberY" value="50" class="form-control">
+                  </div>
                   <div class="col-md-6">
                     <label for="qrTextAbove" class="form-label">QR Text Above:</label>
                     <input type="text" id="qrTextAbove" value="Scan me" class="form-control">
                   </div>
-                  <div class="col-md-6">
-                    <label for="qrCode" class="form-label">QR Code:</label>
-                    <input type="text" id="qrCode" value="https://www.crowndigital.io" class="form-control">
+                  <div class="col-md-3">
+                    <label for="qrTextAboveX" class="form-label"> X:</label>
+                    <input type="text" id="qrTextAboveX" value="15" class="form-control">
                   </div>
-                </div>
-              
-                <div class="row mb-4">
+                  <div class="col-md-3">
+                    <label for="qrTextAboveY" class="form-label">Y:</label>
+                    <input type="text" id="qrTextAboveY" value="65" class="form-control">
+                  </div>
                   <div class="col-md-6">
                     <label for="qrTextBelow" class="form-label">QR Text Below:</label>
                     <input type="text" id="qrTextBelow" value="Visit our website" class="form-control">
                   </div>
-                  <!-- <div class="col-md-6">
+                  <div class="col-md-3">
+                    <label for="qrTextBelowX" class="form-label"> X:</label>
+                    <input type="text" id="qrTextBelowX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="qrTextBelowY" class="form-label">Y:</label>
+                    <input type="text" id="qrTextBelowY" value="110" class="form-control">
+                  </div>
+                </div>      
+                <!-- <div class="row mb-4">
+                  <div class="col-md-6">
+                    <label for="qrCode" class="form-label">QR Code:</label>
+                    <input type="text" id="qrCode" value="https://www.crowndigital.io" class="form-control">
+                  </div>
+                </div> -->            
+                <div class="row mb-4" id="bodySection" style="display: none;">
+                  <div class="col-md-6">
                     <label for="gstNo" class="form-label">GST No:</label>
                     <input type="text" id="gstNo" value="1234567890" class="form-control">
-                  </div> -->
-                </div>
-              
-                <div class="row mb-4">
-                  <!-- <div class="col-md-6">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="gstNoX" class="form-label"> X:</label>
+                    <input type="text" id="gstNoX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="gstNoY" class="form-label"> Y:</label>
+                    <input type="text" id="gstNoY" value="140" class="form-control">
+                  </div>
+                  <div class="col-md-6">
                     <label for="receiptNo" class="form-label">Receipt No:</label>
                     <input type="text" id="receiptNo" value="987654" class="form-control">
-                  </div> -->
+                  </div>
+                  <div class="col-md-3">
+                    <label for="receiptNoX" class="form-label"> X:</label>
+                    <input type="text" id="receiptNoX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="receiptNoY" class="form-label"> Y:</label>
+                    <input type="text" id="receiptNoY" value="150" class="form-control">
+                  </div>
                   <div class="col-md-6">
                     <label for="email" class="form-label">Email:</label>
                     <input type="text" id="email" value="help@crowndigital.io" class="form-control">
                   </div>
-                </div>
-              
-                <!-- <div class="row mb-4">
+                  <div class="col-md-3">
+                    <label for="emailX" class="form-label"> X:</label>
+                    <input type="text" id="emailX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="emailY" class="form-label"> Y:</label>
+                    <input type="text" id="emailY" value="160" class="form-control">
+                  </div>
                   <div class="col-md-6">
                     <label for="orderTime" class="form-label">Order Time:</label>
-                    <input type="text" id="orderTime" value="2023-03-23 10:30:00" class="form-control">
+                    <input type="text" id="orderTime" value="2023-03-23" class="form-control">
                   </div>
+                  <div class="col-md-3">
+                    <label for="orderTimeX" class="form-label"> X:</label>
+                    <input type="text" id="orderTimeX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="orderTimeY" class="form-label"> Y:</label>
+                    <input type="text" id="orderTimeY" value="170" class="form-control">
+                  </div>
+                </div>
+                
+                <div class="row mb-4" id="footerSection" style="display: none;">
                   <div class="col-md-6">
-                    <label for="items" class="form-label">Items:</label>
-                    <textarea id="items" rows="4" class="form-control">
-                      Item 1: $10.00
-                      Item 2: $15.00
-                      Item 3: $20.00
-                    </textarea>
-                  </div>
-                </div> -->
-              
-                <!-- <div class="row mb-4">
-                  <div class="col-md-6">
-                    <label for="totalFee" class="form-label">Total Fee:</label>
-                    <input type="text" id="totalFee" value="$45.00" class="form-control">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="gst" class="form-label">GST:</label>
-                    <input type="text" id="gst" value="$3.15" class="form-control">
-                  </div>
-                </div> -->
-              
-                <div class="row mb-4">
-                  <div class="col-md-12">
                     <label for="footerText" class="form-label">Footer Text:</label>
                     <input type="text" id="footerText" value="Thank you for your purchase!" class="form-control">
                   </div>
+                  <div class="col-md-3">
+                    <label for="footerTextX" class="form-label"> X:</label>
+                    <input type="text" id="footerTextX" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerTextY" class="form-label"> Y:</label>
+                    <input type="text" id="footerTextY" value="250" class="form-control">
+                  </div>
                 </div>
-              
+                 
                 <div class="row">
                   <div class="col-md-12">
                     <button type="submit" class="btn btn-primary">Save</button>
@@ -493,8 +550,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 mt-4">
-          <h2>Receipt Preview</h2>
+        <div class="col-md-4">
+          <p>Receipt Preview</p>
           <div class="receipt-preview-container" id="receiptPreview"></div>
         </div>
       </div>
@@ -533,28 +590,89 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("receiptSettingsForm");
   const receiptPreview = document.getElementById("receiptPreview");
+  const header = document.getElementById('headerSection');
+  const body = document.getElementById('bodySection');
+  const section = document.getElementById('sectionReceipt');
+  const footer = document.getElementById("footerSection");
 
-  form.addEventListener("submit", function(event) {
-    event.preventDefault();
 
+  function handleSection() {
+    if (section.value === 'header') {
+        header.style.display = "flex";
+        body.style.display = "none";
+        footer.style.display = "none";
+    }
+    else if (section.value === 'body') {
+        header.style.display = "none";
+        body.style.display = "flex";
+        footer.style.display = "none";
+    }
+    else if (section.value === 'footer') {
+        header.style.display = "none";
+        body.style.display = "none";
+        footer.style.display = "flex";
+    }
+  }
+
+  handleSection();
+  section.addEventListener("change", handleSection);
+
+  // Debounce function
+  function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+
+
+  // Function to generate PDF
+  const generatePDF = function() {
     const logoImage = document.getElementById("logoImage").files[0];
-    // const orderNumber = document.getElementById("orderNumber").value;
+    const orderNumber = document.getElementById("orderNumber").value;
     const qrTextAbove = document.getElementById("qrTextAbove").value;
-    const qrCode = document.getElementById("qrCode").value;
+    // const qrCode = document.getElementById("qrCode").value;
     const qrTextBelow = document.getElementById("qrTextBelow").value;
-    // const gstNo = document.getElementById("gstNo").value;
-    // const receiptNo = document.getElementById("receiptNo").value;
+    const gstNo = document.getElementById("gstNo").value;
+    const receiptNo = document.getElementById("receiptNo").value;
     const email = document.getElementById("email").value;
-    // const orderTime = document.getElementById("orderTime").value;
+    const orderTime = document.getElementById("orderTime").value;
     // const items = document.getElementById("items").value;
     // const totalFee = document.getElementById("totalFee").value;
     // const gst = document.getElementById("gst").value;
-    const footerText = document.getElementById("footerText").value;
+    const footerText = document.getElementById('footerText').value;
+
+    const logoX = parseFloat(document.getElementById("logoX").value);
+    const logoY = parseFloat(document.getElementById("logoY").value);
+    const ordernumberX = document.getElementById("ordernumberX").value;
+    const ordernumberY = document.getElementById("ordernumberY").value;
+    const qrTextAboveX = document.getElementById("qrTextAboveX").value;
+    const qrTextAboveY = document.getElementById("qrTextAboveY").value;
+    const qrTextBelowX = document.getElementById("qrTextBelowX").value;
+    const qrTextBelowY = document.getElementById("qrTextBelowY").value;
+    const gstNoX = document.getElementById("gstNoX").value;
+    const gstNoY = document.getElementById("gstNoY").value;
+    const receiptNoX = document.getElementById("receiptNoX").value;
+    const receiptNoY = document.getElementById("receiptNoY").value;
+    const emailX = document.getElementById("emailX").value;
+    const emailY= document.getElementById("emailY").value;
+    const orderTimeX = document.getElementById("orderTimeX").value;
+    const orderTimeY = document.getElementById("orderTimeY").value;
+    const footerTextX = document.getElementById("footerTextX").value;
+    const footerTextY = document.getElementById("footerTextY").value;
+
+
 
     const doc = new jspdf.jsPDF('p', 'mm', [90, 300]);
 
@@ -563,7 +681,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const img = new Image();
       img.src = URL.createObjectURL(logoImage);
       img.onload = function() {
-        doc.addImage(img, 'JPEG', 25, 15, 25, 25);
+        doc.addImage(img, 'JPEG', logoX, logoY, 25, 25);
         addContent();
       };
     } else {
@@ -572,33 +690,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function addContent() {
       // Add order number and QR code
-      doc.text("Order: 001", 15, 50);
-      doc.text(qrTextAbove, 15, 60);
-      doc.text(qrCode, 15, 70);
-      doc.text(qrTextBelow, 15, 80);
+      doc.text("Order: " + orderNumber, ordernumberX, ordernumberY);
+      doc.text(qrTextAbove, qrTextAboveX, qrTextAboveY);
+      doc.addImage('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAY1BMVEX///8AAACfn589PT15eXmcnJz8/Pyurq5GRkZpaWlsbGwhISErKytjY2PW1tZ+fn6Pj4+7u7vExMQyMjLQ0NBbW1u1tbXd3d3o6OhTU1NNTU2IiIilpaXu7u7KysqVlZURERF+MS0zAAAB9ElEQVQ4jY2U2xajIAxFExENKIp4Qeut//+VE/AytZ2HyUOXnu5FckgiwH9EJ5MzcmgSuQLkDeSXJjtGJF4hQCFWAMKAuEXJSILncbUAQ/B6wUuDqE8RkwNxdt8lpAI2B1u+F4ykIPfduhuxfGAREMgyqPCdBqRg0d7Izm9tQHp+6MP5jLT8vD+QMiBd46id14iUD0QWbUkxEYBhU1lAqGwLeSO3IxijUfPjqE5D1K2AZe6IKsGO2lOMSC6uUKAI6jQjDeoW869mqCOX/pIbA4MyXWa0Vo2HfQpIvXDzetiUaWKitUYaPArCZhxTmhhRFsYFfYJ0JAqXYoPX4MYDkDnUEJcxRFUWo51wcOjH1zZyFqoSrHbsmwMh0xsdkW1yDbqIZA3CZqJpRiKJHSei2CZz+MCMVXmUu9OL+nXmOZpCA7hcTS2fkrnWr5dprVJYVFoKP/cBmZXZcgNb/zPHKTvyZ6K3veXPBmhawXNRXK7AgojaiHy2UYtuW9iXyxym/X0vj/G+5n50XOsnco9U5iOgOdPKpj+Qv4M5zPNseQMcb1g1W/NA4njzHnFMGt76vL0LuZdEYcER5mWLtdjsQu5VG+qQv5ZDYzFfLK9aXn2P9xqQ9Sg6Xh3vyc/a++P/axtjPD4eUq5reJcOFv7dflr07/gDodwbXTWWFtMAAAAASUVORK5CYII=', 'PNG',25,70, 35, 35)
+      doc.text(qrTextBelow, qrTextBelowX, qrTextBelowY);
 
       // Add GST no, receipt no, email, and order time
-      doc.text("GST No: 111232" ,15, 100);
-      doc.text("Receipt No: 23344" , 15, 110);
-      doc.text("Email: " + email, 15, 120);
-      doc.text("Order Time: 2023/03/23", 15, 130);
+      doc.text("GST No: " + gstNo ,gstNoX, gstNoY);
+      doc.text("Receipt No: " + receiptNo , receiptNoX, receiptNoY);
+      doc.text("Email: " + email, emailX, emailY);
+      doc.text("Order Time: " + orderTime, orderTimeX, orderTimeY);
 
-      doc.text('Item 1: $10.00', 15, 150)
-      doc.text('Item 2: $10.00', 15, 160)
-      doc.text('Item 3: $10.00', 15, 170)
+      doc.text('Item 1: $10.00', 15, 190)
+      doc.text('Item 2: $10.00', 15, 200)
+      doc.text('Item 3: $10.00', 15, 210)
 
 
       // Add total fee and GST
-      doc.text("Total Fee: $30.00", 15, 190);
-      doc.text("GST: $4.00" , 15, 210);
+      doc.text("Total Fee: $30.00", 15, 225);
+      doc.text("GST: $4.00" , 15, 235);
 
       // Add footer text
-      doc.text(footerText, 15,  240);
+      doc.text(footerText, footerTextX,  footerTextY);
 
       // Display the PDF in the preview area
       receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600">';
     }
-  });
+  };
+
+  // Debounced function to generate PDF
+  const debouncedGeneratePDF = debounce(generatePDF, 300);
+
+  // Listen for input changes and generate PDF
+  form.addEventListener("input", debouncedGeneratePDF);
 });
 
 </script>
