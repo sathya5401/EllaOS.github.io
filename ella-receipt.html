@@ -407,7 +407,7 @@
 
     <section class="section">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div class="card">
             <div class="card-body">
               <label class="col-form-label">Section</label>
@@ -550,8 +550,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <p>Receipt Preview</p>
+        <div class="col-md-5">
+          <!-- <p>Receipt Preview</p> -->
           <div class="receipt-preview-container" id="receiptPreview"></div>
         </div>
       </div>
@@ -714,7 +714,7 @@ document.addEventListener("DOMContentLoaded", function() {
       doc.text(footerText, footerTextX,  footerTextY);
 
       // Display the PDF in the preview area
-      receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600">';
+      receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600" margin="0 auto" scale="100%" toolbar="1" zoom="scale">';
     }
   };
 
