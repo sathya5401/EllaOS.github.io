@@ -410,14 +410,15 @@
         <div class="col-md-7">
           <div class="card">
             <div class="card-body">
-              <label class="col-form-label">Section</label>
+              <!-- <label class="col-form-label">Section</label>
               <select class="form-select mb-4" aria-label="Select Section" id="sectionReceipt" style="width: 50%;">
                 <option value="header" selected>Header</option>                                    
                 <option value="body">Body</option>
                 <option value="footer">Footer</option>
-              </select>
+              </select> -->
               <form id="receiptSettingsForm">
-                <div class="row mb-4" id="headerSection" style="display: none;">
+                <div class="row mb-4" id="headerSection">
+                  <p> <b> Header </b> </p>
                   <div class="col-md-6">
                     <label for="logoImage" class="form-label">Logo Image:</label>
                     <input type="file" id="logoImage" accept="image/jpeg, image/png" class="form-control">
@@ -432,7 +433,7 @@
                   </div>
                   <div class="col-md-6">
                     <label for="orderNumber" class="form-label">Order Number:</label>
-                    <input type="text" id="orderNumber" value="001" class="form-control">
+                    <input type="text" id="orderNumber" value="001" class="form-control" name>
                   </div>
                   <div class="col-md-3">
                     <label for="ordernumberX" class="form-label"> X:</label>
@@ -473,7 +474,8 @@
                     <input type="text" id="qrCode" value="https://www.crowndigital.io" class="form-control">
                   </div>
                 </div> -->            
-                <div class="row mb-4" id="bodySection" style="display: none;">
+                <div class="row mb-4" id="bodySection">
+                  <p><b> Body </b></p>
                   <div class="col-md-6">
                     <label for="gstNo" class="form-label">GST No:</label>
                     <input type="text" id="gstNo" value="1234567890" class="form-control">
@@ -524,7 +526,8 @@
                   </div>
                 </div>
                 
-                <div class="row mb-4" id="footerSection" style="display: none;">
+                <div class="row mb-4" id="footerSection">
+                  <p> <b> Footer</b> </p>
                   <div class="col-md-6">
                     <label for="footerText" class="form-label">Footer Text:</label>
                     <input type="text" id="footerText" value="Thank you for your purchase!" class="form-control">
@@ -603,26 +606,26 @@ document.addEventListener("DOMContentLoaded", function() {
   const footer = document.getElementById("footerSection");
 
 
-  function handleSection() {
-    if (section.value === 'header') {
-        header.style.display = "flex";
-        body.style.display = "none";
-        footer.style.display = "none";
-    }
-    else if (section.value === 'body') {
-        header.style.display = "none";
-        body.style.display = "flex";
-        footer.style.display = "none";
-    }
-    else if (section.value === 'footer') {
-        header.style.display = "none";
-        body.style.display = "none";
-        footer.style.display = "flex";
-    }
-  }
+  // function handleSection() {
+  //   if (section.value === 'header') {
+  //       header.style.display = "flex";
+  //       body.style.display = "none";
+  //       footer.style.display = "none";
+  //   }
+  //   else if (section.value === 'body') {
+  //       header.style.display = "none";
+  //       body.style.display = "flex";
+  //       footer.style.display = "none";
+  //   }
+  //   else if (section.value === 'footer') {
+  //       header.style.display = "none";
+  //       body.style.display = "none";
+  //       footer.style.display = "flex";
+  //   }
+  // }
 
-  handleSection();
-  section.addEventListener("change", handleSection);
+  // handleSection();
+  // section.addEventListener("change", handleSection);
 
   // Debounce function
   function debounce(func, delay) {
