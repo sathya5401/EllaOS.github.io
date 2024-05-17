@@ -721,6 +721,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Debounced function to generate PDF
   const debouncedGeneratePDF = debounce(generatePDF, 300);
 
+  debouncedGeneratePDF()
   // Listen for input changes and generate PDF
   form.addEventListener("input", debouncedGeneratePDF);
 });
