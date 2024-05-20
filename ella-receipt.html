@@ -467,6 +467,18 @@
                     <label for="qrTextBelowY" class="form-label">Y:</label>
                     <input type="text" id="qrTextBelowY" value="110" class="form-control">
                   </div>
+                  <div class="col-md-6">
+                    <label for="bodyText" class="form-label">Body Text:</label>
+                    <input type="text" id="bodyText" value="" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="bodyTextX" class="form-label"> X:</label>
+                    <input type="text" id="bodyTextX" value="" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="bodyTextY" class="form-label"> Y:</label>
+                    <input type="text" id="bodyTextY" value="" class="form-control">
+                  </div>
                 </div>      
                 <!-- <div class="row mb-4">
                   <div class="col-md-6">
@@ -539,6 +551,42 @@
                   <div class="col-md-3">
                     <label for="footerTextY" class="form-label"> Y:</label>
                     <input type="text" id="footerTextY" value="250" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="footerText2" class="form-label">Footer Text 2:</label>
+                    <input type="text" id="footerText2" value="" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerTextX2" class="form-label"> X:</label>
+                    <input type="text" id="footerTextX2" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerTextY2" class="form-label"> Y:</label>
+                    <input type="text" id="footerTextY2" value="250" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="footerText3" class="form-label">Footer Text 3:</label>
+                    <input type="text" id="footerText3" value="" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerTextX3" class="form-label"> X:</label>
+                    <input type="text" id="footerTextX3" value="15" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerTextY3" class="form-label"> Y:</label>
+                    <input type="text" id="footerTextY3" value="250" class="form-control">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="footerImage" class="form-label">Footer Image:</label>
+                    <input type="file" id="footerImage" accept="image/jpeg, image/png" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerImageX" class="form-label"> X:</label>
+                    <input type="text" id="footerImageX" value="25" class="form-control">
+                  </div>
+                  <div class="col-md-3">
+                    <label for="footerImageY" class="form-label"> Y:</label>
+                    <input type="text" id="footerImageY" value="280" class="form-control">
                   </div>
                 </div>
                  
@@ -647,6 +695,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const qrTextAbove = document.getElementById("qrTextAbove").value;
     // const qrCode = document.getElementById("qrCode").value;
     const qrTextBelow = document.getElementById("qrTextBelow").value;
+    const bodyText = document.getElementById('bodyText').value;
     const gstNo = document.getElementById("gstNo").value;
     const receiptNo = document.getElementById("receiptNo").value;
     const email = document.getElementById("email").value;
@@ -655,6 +704,11 @@ document.addEventListener("DOMContentLoaded", function() {
     // const totalFee = document.getElementById("totalFee").value;
     // const gst = document.getElementById("gst").value;
     const footerText = document.getElementById('footerText').value;
+    const footerText2 = document.getElementById('footerText2').value;
+    const footerText3 = document.getElementById('footerText3').value;
+    const footerImage = document.getElementById("footerImage").files[0];
+
+
 
     const logoX = parseFloat(document.getElementById("logoX").value);
     const logoY = parseFloat(document.getElementById("logoY").value);
@@ -664,6 +718,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const qrTextAboveY = document.getElementById("qrTextAboveY").value;
     const qrTextBelowX = document.getElementById("qrTextBelowX").value;
     const qrTextBelowY = document.getElementById("qrTextBelowY").value;
+    const bodyTextX = document.getElementById("bodyTextX").value;
+    const bodyTextY = document.getElementById("bodyTextY").value;
     const gstNoX = document.getElementById("gstNoX").value;
     const gstNoY = document.getElementById("gstNoY").value;
     const receiptNoX = document.getElementById("receiptNoX").value;
@@ -674,10 +730,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const orderTimeY = document.getElementById("orderTimeY").value;
     const footerTextX = document.getElementById("footerTextX").value;
     const footerTextY = document.getElementById("footerTextY").value;
+    const footerTextX2 = document.getElementById("footerTextX2").value;
+    const footerTextY2 = document.getElementById("footerTextY2").value;
+    const footerTextX3 = document.getElementById("footerTextX3").value;
+    const footerTextY3 = document.getElementById("footerTextY3").value;
+    const footerImageX = parseFloat(document.getElementById("footerImageX").value);
+    const footerImageY = parseFloat(document.getElementById("footerImageY").value);
 
 
 
-    const doc = new jspdf.jsPDF('p', 'mm', [90, 300]);
+    const doc = new jspdf.jsPDF('p', 'mm', [90, 330]);
 
     // Add logo image
     if (logoImage) {
@@ -691,12 +753,26 @@ document.addEventListener("DOMContentLoaded", function() {
       addContent();
     }
 
+    // Add footer image
+    if (footerImage) { 
+      const img = new Image();
+      img.src = URL.createObjectURL(footerImage);
+      img.onload = function() {
+        doc.addImage(img, 'JPEG', footerImageX, footerImageY, 25, 25);
+        addContent();
+      };
+    } else {
+      addContent();
+    }
+
     function addContent() {
       // Add order number and QR code
       doc.text("Order: " + orderNumber, ordernumberX, ordernumberY);
       doc.text(qrTextAbove, qrTextAboveX, qrTextAboveY);
       doc.addImage('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAMAAAANmfvwAAAAY1BMVEX///8AAACfn589PT15eXmcnJz8/Pyurq5GRkZpaWlsbGwhISErKytjY2PW1tZ+fn6Pj4+7u7vExMQyMjLQ0NBbW1u1tbXd3d3o6OhTU1NNTU2IiIilpaXu7u7KysqVlZURERF+MS0zAAAB9ElEQVQ4jY2U2xajIAxFExENKIp4Qeut//+VE/AytZ2HyUOXnu5FckgiwH9EJ5MzcmgSuQLkDeSXJjtGJF4hQCFWAMKAuEXJSILncbUAQ/B6wUuDqE8RkwNxdt8lpAI2B1u+F4ykIPfduhuxfGAREMgyqPCdBqRg0d7Izm9tQHp+6MP5jLT8vD+QMiBd46id14iUD0QWbUkxEYBhU1lAqGwLeSO3IxijUfPjqE5D1K2AZe6IKsGO2lOMSC6uUKAI6jQjDeoW869mqCOX/pIbA4MyXWa0Vo2HfQpIvXDzetiUaWKitUYaPArCZhxTmhhRFsYFfYJ0JAqXYoPX4MYDkDnUEJcxRFUWo51wcOjH1zZyFqoSrHbsmwMh0xsdkW1yDbqIZA3CZqJpRiKJHSei2CZz+MCMVXmUu9OL+nXmOZpCA7hcTS2fkrnWr5dprVJYVFoKP/cBmZXZcgNb/zPHKTvyZ6K3veXPBmhawXNRXK7AgojaiHy2UYtuW9iXyxym/X0vj/G+5n50XOsnco9U5iOgOdPKpj+Qv4M5zPNseQMcb1g1W/NA4njzHnFMGt76vL0LuZdEYcER5mWLtdjsQu5VG+qQv5ZDYzFfLK9aXn2P9xqQ9Sg6Xh3vyc/a++P/axtjPD4eUq5reJcOFv7dflr07/gDodwbXTWWFtMAAAAASUVORK5CYII=', 'PNG',25,70, 35, 35)
       doc.text(qrTextBelow, qrTextBelowX, qrTextBelowY);
+      doc.text(bodyText, bodyTextX, bodyTextY);
+
 
       // Add GST no, receipt no, email, and order time
       doc.text("GST No: " + gstNo ,gstNoX, gstNoY);
@@ -715,6 +791,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Add footer text
       doc.text(footerText, footerTextX,  footerTextY);
+      doc.text(footerText2, footerTextX2,  footerTextY2);
+      doc.text(footerText3, footerTextX3,  footerTextY3);
+
+      // Add footer image
+      // if (footerImage) { // added this block
+      //   const img = new Image();
+      //   img.src = URL.createObjectURL(footerImage);
+      //   img.onload = function() {
+      //     console.log('img', img)
+      //     doc.addImage(img, 'JPEG', footerImageX, footerImageY, 25, 25);
+      //   };
+      // }
+
 
       // Display the PDF in the preview area
       receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600" margin="0 auto" scale="100%" toolbar="1" zoom="scale">';
