@@ -410,14 +410,103 @@
         <div class="col-md-7">
           <div class="card">
             <div class="card-body">
-              <!-- <label class="col-form-label">Section</label>
-              <select class="form-select mb-4" aria-label="Select Section" id="sectionReceipt" style="width: 50%;">
-                <option value="header" selected>Header</option>                                    
-                <option value="body">Body</option>
-                <option value="footer">Footer</option>
-              </select> -->
               <form id="receiptSettingsForm">
-                <div class="row mb-4" id="headerSection">
+                <table class="table table-hover">
+                  <th>
+                    <!-- <td class="col-3"> Label </td> -->
+                    <td class="col"> Input </td>
+                    <td class="col"> X </td>
+                    <td class="col"> Y</td>
+                  </th>
+                  <tr>
+                    <td colspan="12"> <b> Header</b></td>
+                  </tr>
+                  <tr>
+                    <td class="col-3"> Logo Image </td>
+                    <td class="col-5"><input type="file" id="logoImage" accept="image/jpeg, image/png" class="form-control"> </td>
+                    <td class="col-2"> <input type="text" id="logoX" value="25" class="form-control"> </td>
+                    <td class="col-2">   <input type="text" id="logoY" value="15" class="form-control"> </td>
+                  </tr> 
+                  <tr>
+                    <td class="col"> Order Number </td>
+                    <td class="col"><input type="text" id="orderNumber" value="001" class="form-control" name> </td>
+                    <td class="col"> <input type="text" id="ordernumberX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="ordernumberY" value="50" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> QR Text Above </td>
+                    <td class="col"><input type="text" id="qrTextAbove" value="Scan me" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="qrTextAboveX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="qrTextAboveY" value="110" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> QR Text Below </td>
+                    <td class="col"><input type="text" id="qrTextBelow" value="Visit our website" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="qrTextBelowX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="qrTextBelowY" value="140" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Body Text </td>
+                    <td class="col"><input type="text" id="bodyText" value="" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="bodyTextX" value="" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="bodyTextY" value="" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td colspan="12"> <b> Body</b></td>
+                  </tr>
+                  <tr>
+                    <td class="col"> GST No </td>
+                    <td class="col"><input type="text" id="gstNo" value="1234567890" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="gstNoX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="gstNoY" value="140" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Receipt No </td>
+                    <td class="col"><input type="text" id="receiptNo" value="987654" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="receiptNoX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="receiptNoY" value="150" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Email </td>
+                    <td class="col"><input type="text" id="email" value="help@crowndigital.io" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="emailX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="emailY" value="160" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Order Time </td>
+                    <td class="col"><input type="text" id="orderTime" value="2023-03-23" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="orderTimeX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="orderTimeY" value="170" class="form-control"> </td>
+                  </tr>  
+                  <tr>
+                    <td colspan="12"> <b> Footer</b></td>
+                  </tr>                
+                  <tr>
+                    <td class="col"> Footer Text </td>
+                    <td class="col"><input type="text" id="footerText" value="Thank you for your purchase!" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextX" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextY" value="250" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Footer Text 2 </td>
+                    <td class="col"><input type="text" id="footerText2" value="" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextX2" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextY2" value="250" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Footer Text 3 </td>
+                    <td class="col"><input type="text" id="footerText3" value="" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextX3" value="15" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerTextY3" value="250" class="form-control"> </td>
+                  </tr>
+                  <tr>
+                    <td class="col"> Footer Image </td>
+                    <td class="col"><input type="file" id="footerImage" accept="image/jpeg, image/png" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerImageX" value="25" class="form-control"> </td>
+                    <td class="col"> <input type="text" id="footerImageY" value="280" class="form-control"> </td>
+                  </tr>  
+                </table>
+                <!-- <div class="row mb-4" id="headerSection">
                   <p> <b> Header </b> </p>
                   <div class="col-md-6">
                     <label for="logoImage" class="form-label">Logo Image:</label>
@@ -479,14 +568,14 @@
                     <label for="bodyTextY" class="form-label"> Y:</label>
                     <input type="text" id="bodyTextY" value="" class="form-control">
                   </div>
-                </div>      
+                </div>       -->
                 <!-- <div class="row mb-4">
                   <div class="col-md-6">
                     <label for="qrCode" class="form-label">QR Code:</label>
                     <input type="text" id="qrCode" value="https://www.crowndigital.io" class="form-control">
                   </div>
                 </div> -->            
-                <div class="row mb-4" id="bodySection">
+                <!-- <div class="row mb-4" id="bodySection">
                   <p><b> Body </b></p>
                   <div class="col-md-6">
                     <label for="gstNo" class="form-label">GST No:</label>
@@ -536,9 +625,9 @@
                     <label for="orderTimeY" class="form-label"> Y:</label>
                     <input type="text" id="orderTimeY" value="170" class="form-control">
                   </div>
-                </div>
+                </div> -->
                 
-                <div class="row mb-4" id="footerSection">
+                <!-- <div class="row mb-4" id="footerSection">
                   <p> <b> Footer</b> </p>
                   <div class="col-md-6">
                     <label for="footerText" class="form-label">Footer Text:</label>
@@ -588,7 +677,7 @@
                     <label for="footerImageY" class="form-label"> Y:</label>
                     <input type="text" id="footerImageY" value="280" class="form-control">
                   </div>
-                </div>
+                </div> -->
                  
                 <div class="row">
                   <div class="col-md-12">
@@ -806,7 +895,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
       // Display the PDF in the preview area
-      receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="400" height="600" margin="0 auto" scale="100%" toolbar="1" zoom="scale">';
+      receiptPreview.innerHTML = '<embed src="' + doc.output('datauristring') + '" type="application/pdf" width="600" height="800" margin="0 auto" scale="100%" toolbar="1" zoom="scale">';
     }
   };
 
