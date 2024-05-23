@@ -287,11 +287,38 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="ella-management.html">
-          <i class="bi bi-person"></i>
-          <span>Manage Fleets </span>
+        <a class="nav-link collapsed" data-bs-target="#fleet-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-diagram-3"></i><span>Manage Fleet</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End Profile Page Nav -->
+        <ul id="fleet-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="ella-fleet.html">
+              <i class="bi bi-circle"></i><span>Fleets</span>
+            </a>
+          </li>
+          <li>
+          <li>
+            <a href="ella-devices.html">
+              <i class="bi bi-circle"></i><span>Device Status</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Deployment</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Maintenance</span>
+            </a>
+          </li>
+          <li>
+            <a href="components-alerts.html">
+              <i class="bi bi-circle"></i><span>Inventory & Builds</span>
+            </a>
+          </li>
+        </ul>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="promotions.html">
@@ -364,7 +391,7 @@
       </li><!-- End Error 404 Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-blank.html">
+        <a class="nav-link collapsed" href="ella-users.html">
           <i class="bi bi-file-earmark"></i>
           <span>User Management</span>
         </a>
